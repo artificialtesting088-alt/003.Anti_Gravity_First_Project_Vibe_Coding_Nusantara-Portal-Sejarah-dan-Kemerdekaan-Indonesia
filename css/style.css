@@ -85,10 +85,12 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-body);
+  background-color: #FFF8F8;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(200, 16, 46, 0.04) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(217, 119, 6, 0.04) 0%, transparent 45%);
+    radial-gradient(circle at 10% 10%, rgba(225, 29, 72, 0.1) 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(245, 158, 11, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 15% 55%, rgba(14, 165, 233, 0.09) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(249, 115, 22, 0.1) 0%, transparent 45%);
   color: var(--gelap-teks);
   line-height: 1.65;
   overflow-x: hidden;
@@ -97,9 +99,12 @@ body {
 }
 
 [data-theme="dark"] body {
+  background-color: #0B0F19;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(239, 68, 68, 0.07) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.05) 0%, transparent 45%);
+    radial-gradient(circle at 10% 10%, rgba(239, 68, 68, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 15% 55%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(249, 115, 22, 0.14) 0%, transparent 45%);
 }
 
 /* Custom Scrollbar */
@@ -312,19 +317,21 @@ body {
   min-height: auto;
   display: flex;
   align-items: center;
-  padding: 95px 0 45px;
+  padding: 100px 0 50px;
   overflow: hidden;
   background: 
-    radial-gradient(ellipse at 50% 10%, rgba(200, 16, 46, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
-    linear-gradient(175deg, rgba(200, 16, 46, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+    radial-gradient(ellipse at 50% 0%, rgba(225, 29, 72, 0.22) 0%, transparent 65%),
+    radial-gradient(circle at 15% 35%, rgba(245, 158, 11, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #FFF0F3 0%, #FFFBF0 55%, #FDF2F8 100%);
 }
 
 [data-theme="dark"] .hero-section {
   background: 
-    radial-gradient(ellipse at 50% 10%, rgba(239, 68, 68, 0.22) 0%, transparent 60%),
-    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
-    linear-gradient(175deg, rgba(239, 68, 68, 0.1) 0%, rgba(11, 14, 20, 0) 100%);
+    radial-gradient(ellipse at 50% 0%, rgba(239, 68, 68, 0.32) 0%, transparent 65%),
+    radial-gradient(circle at 15% 35%, rgba(245, 158, 11, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
+    linear-gradient(180deg, #180910 0%, #0D121D 60%, #0B0F19 100%);
 }
 
 .hero-backdrop {
@@ -579,62 +586,83 @@ section {
 
 .timeline-section {
   position: relative;
-  background-color: var(--putih-krem);
-  background-image: 
-    radial-gradient(ellipse at 15% 15%, rgba(200, 16, 46, 0.07) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 55%);
+  background: 
+    linear-gradient(180deg, #FFF1F2 0%, #FFFBEB 25%, #F0FDFA 55%, #FFF7ED 85%, #FFF1F2 100%);
   overflow: hidden;
-  border-top: 1px solid var(--card-border);
-  border-bottom: 1px solid var(--card-border);
+  border-top: 1px solid rgba(225, 29, 72, 0.15);
+  border-bottom: 1px solid rgba(225, 29, 72, 0.15);
 }
 
 [data-theme="dark"] .timeline-section {
-  background-color: #0b0f17;
-  background-image: 
-    radial-gradient(ellipse at 15% 15%, rgba(239, 68, 68, 0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 85%, rgba(245, 158, 11, 0.1) 0%, transparent 55%);
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(225, 29, 72, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 85% 45%, rgba(245, 158, 11, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 15% 75%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 85% 90%, rgba(249, 115, 22, 0.2) 0%, transparent 50%),
+    linear-gradient(180deg, #0C101C 0%, #151627 35%, #0F1C24 70%, #17111B 100%);
 }
 
-/* Nusantara Maritime & Temple Heritage Vector Silhouette (Borobudur, Kapal Pinisi, Keris) */
-.timeline-section::after {
-  content: '';
+/* Ambient Colorful Glow Orbs for Living Atmosphere */
+.ambient-glow {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 380px;
-  background: url('../assets/images/vector_nusantara_heritage.svg') no-repeat center bottom / contain;
-  opacity: 0.55;
+  border-radius: 50%;
+  filter: blur(80px);
   pointer-events: none;
   z-index: 0;
+  opacity: 0.65;
+  mix-blend-mode: multiply;
+  animation: floatAmbient 18s ease-in-out infinite alternate;
 }
 
-[data-theme="dark"] .timeline-section::after {
-  opacity: 0.7;
-  filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.4));
+[data-theme="dark"] .ambient-glow {
+  mix-blend-mode: screen;
+  opacity: 0.45;
+  filter: blur(95px);
 }
 
-/* Gunungan Wayang Cultural Watermarks */
-.decor-gunungan {
-  position: absolute;
-  width: 240px;
-  height: 420px;
-  background: url('../assets/images/gunungan.svg') no-repeat center / contain;
-  pointer-events: none;
-  opacity: 0.22;
-  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.25));
-  z-index: 0;
-  transition: opacity var(--transisi-sedang);
+.ambient-glow-1 {
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, #F43F5E 0%, #E11D48 40%, transparent 70%);
+  top: 60px;
+  left: -140px;
+  animation-duration: 16s;
 }
 
-.decor-gunungan-left-1 { top: 140px; left: -60px; transform: rotate(7deg); }
-.decor-gunungan-right-1 { top: 680px; right: -60px; transform: rotate(-7deg) scaleX(-1); }
-.decor-gunungan-left-2 { top: 1250px; left: -60px; transform: rotate(6deg); }
-.decor-gunungan-right-2 { top: 1850px; right: -60px; transform: rotate(-6deg) scaleX(-1); }
+.ambient-glow-2 {
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, #FBBF24 0%, #F59E0B 45%, transparent 70%);
+  top: 750px;
+  right: -150px;
+  animation-duration: 22s;
+  animation-delay: -5s;
+}
 
-[data-theme="dark"] .decor-gunungan {
-  opacity: 0.48;
-  filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.5));
+.ambient-glow-3 {
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(circle, #38BDF8 0%, #0284C7 40%, #0D9488 60%, transparent 75%);
+  top: 1550px;
+  left: -160px;
+  animation-duration: 20s;
+  animation-delay: -8s;
+}
+
+.ambient-glow-4 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #FB923C 0%, #EA580C 40%, #BE123C 70%, transparent 75%);
+  bottom: 80px;
+  right: -120px;
+  animation-duration: 19s;
+  animation-delay: -3s;
+}
+
+@keyframes floatAmbient {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -45px) scale(1.12); }
+  100% { transform: translate(-45px, 55px) scale(0.95); }
 }
 
 /* Era Filter Tabs */
@@ -766,15 +794,22 @@ section {
 
 /* Timeline Card */
 .timeline-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 30px rgba(200, 16, 46, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
   transition: all var(--transisi-sedang);
   overflow: hidden;
   position: relative;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+[data-theme="dark"] .timeline-card {
+  background: rgba(21, 26, 37, 0.82);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 20px rgba(239, 68, 68, 0.12);
 }
 
 .timeline-card::before {
@@ -890,42 +925,21 @@ section {
 
 .heroes-section {
   position: relative;
-  background: linear-gradient(180deg, rgba(200, 16, 46, 0.04) 0%, rgba(127, 29, 29, 0.08) 50%, rgba(200, 16, 46, 0.04) 100%);
-  background-image: 
-    radial-gradient(ellipse at 50% 10%, rgba(200, 16, 46, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 10% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 50%, rgba(200, 16, 46, 0.08) 0%, transparent 40%);
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(225, 29, 72, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.24) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(190, 18, 60, 0.15) 0%, transparent 65%),
+    linear-gradient(180deg, #FFF7ED 0%, #FFF1F2 50%, #FDF4FF 100%);
   overflow: hidden;
-  border-top: 1px solid var(--card-border);
-  border-bottom: 1px solid var(--card-border);
+  border-top: 1px solid rgba(225, 29, 72, 0.15);
+  border-bottom: 1px solid rgba(225, 29, 72, 0.15);
 }
 
 [data-theme="dark"] .heroes-section {
-  background: linear-gradient(180deg, #0b0e14 0%, #170d12 50%, #0b0e14 100%);
-  background-image: 
-    radial-gradient(ellipse at 50% 10%, rgba(239, 68, 68, 0.18) 0%, transparent 60%),
-    radial-gradient(circle at 10% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 90% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 40%);
-}
-
-/* Heroic Fighters Silhouette (Bambu Runcing & Bendera Merah Putih) */
-.heroes-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 900px;
-  max-width: 95vw;
-  height: 380px;
-  background: url('../assets/images/vector_pejuang.svg') no-repeat right bottom / contain;
-  opacity: 0.45;
-  pointer-events: none;
-  z-index: 0;
-}
-
-[data-theme="dark"] .heroes-section::after {
-  opacity: 0.65;
-  filter: drop-shadow(0 0 35px rgba(239, 68, 68, 0.55));
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.25) 0%, transparent 50%),
+    linear-gradient(180deg, #170911 0%, #1C0E1E 50%, #0D101C 100%);
 }
 
 .heroes-grid {
@@ -937,15 +951,19 @@ section {
 }
 
 .hero-card {
-  background: var(--card-bg);
-  border: 1.5px solid rgba(217, 119, 6, 0.25);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 30px rgba(200, 16, 46, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: all var(--transisi-sedang);
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
 }
 
 .hero-card::after {
@@ -1058,18 +1076,20 @@ section {
 .proklamasi-section {
   position: relative;
   background: 
-    radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.12) 0%, transparent 70%),
-    linear-gradient(180deg, var(--bg-body) 0%, rgba(200, 16, 46, 0.05) 50%, var(--bg-body) 100%);
-  border-top: 2px solid rgba(200, 16, 46, 0.2);
-  border-bottom: 2px solid rgba(200, 16, 46, 0.2);
+    radial-gradient(ellipse at 50% 40%, rgba(245, 158, 11, 0.28) 0%, rgba(225, 29, 72, 0.18) 50%, transparent 75%),
+    radial-gradient(circle at 10% 85%, rgba(234, 88, 12, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(225, 29, 72, 0.25) 0%, transparent 45%),
+    linear-gradient(180deg, #FEFCE8 0%, #FFF5F5 50%, #FEF3C7 100%);
+  border-top: 2px solid rgba(217, 119, 6, 0.35);
+  border-bottom: 2px solid rgba(217, 119, 6, 0.35);
   overflow: hidden;
 }
 
 [data-theme="dark"] .proklamasi-section {
-  background-color: #0b0e14;
-  background-image: 
-    radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.16) 0%, transparent 70%),
-    linear-gradient(180deg, #0b0e14 0%, #151a23 50%, #0b0e14 100%);
+  background: 
+    radial-gradient(ellipse at 50% 40%, rgba(245, 158, 11, 0.32) 0%, rgba(239, 68, 68, 0.28) 50%, transparent 75%),
+    radial-gradient(circle at 10% 85%, rgba(234, 88, 12, 0.25) 0%, transparent 45%),
+    linear-gradient(180deg, #181007 0%, #1F0D14 50%, #130A17 100%);
 }
 
 /* Iconic Vector Proklamasi Silhouette (Bung Karno di Mikrofon, Bung Hatta, Sang Saka Merah Putih) */
@@ -1083,15 +1103,17 @@ section {
   max-width: 100vw;
   height: 600px;
   background: url('../assets/images/vector_proklamasi.svg') no-repeat center center / contain;
-  opacity: 0.6;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 0;
-  filter: drop-shadow(0 0 35px rgba(200, 16, 46, 0.45));
+  filter: drop-shadow(0 0 35px rgba(245, 158, 11, 0.4));
 }
 
 [data-theme="dark"] .proklamasi-section::before {
-  opacity: 0.75;
-  filter: drop-shadow(0 0 45px rgba(239, 68, 68, 0.75));
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 45px rgba(245, 158, 11, 0.6));
 }
 
 .proklamasi-wrapper {
@@ -1302,28 +1324,40 @@ section {
 .pancasila-section {
   position: relative;
   background: 
-    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 65%),
-    linear-gradient(180deg, var(--bg-body) 0%, rgba(200, 16, 46, 0.05) 50%, var(--bg-body) 100%);
+    radial-gradient(circle at 50% 35%, rgba(245, 158, 11, 0.28) 0%, transparent 65%),
+    radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(225, 29, 72, 0.2) 0%, transparent 50%),
+    linear-gradient(180deg, #FFFBEB 0%, #F0FDF4 50%, #FFF1F2 100%);
   overflow: hidden;
-  border-top: 1px solid var(--card-border);
+  border-top: 1px solid rgba(245, 158, 11, 0.25);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.25);
 }
 
 [data-theme="dark"] .pancasila-section {
-  background-color: #0b0e14;
-  background-image: 
-    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.18) 0%, transparent 65%),
-    linear-gradient(180deg, #0b0e14 0%, #151a23 50%, #0b0e14 100%);
+  background: 
+    radial-gradient(circle at 50% 35%, rgba(245, 158, 11, 0.3) 0%, transparent 65%),
+    radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(239, 68, 68, 0.25) 0%, transparent 50%),
+    linear-gradient(180deg, #161108 0%, #0C1A14 50%, #190B12 100%);
 }
 
 .pancasila-box {
-  background: var(--card-bg);
-  border: 1.5px solid rgba(217, 119, 6, 0.25);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
   border-radius: var(--radius-lg);
   padding: 3rem;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 40px rgba(245, 158, 11, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+
+[data-theme="dark"] .pancasila-box {
+  background: rgba(21, 26, 37, 0.82);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 158, 11, 0.2);
 }
 
 .pancasila-layout {
@@ -1443,31 +1477,41 @@ section {
 .quiz-section {
   position: relative;
   background: 
-    radial-gradient(circle at 50% 20%, rgba(200, 16, 46, 0.1) 0%, transparent 65%),
-    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
-    var(--bg-body);
+    radial-gradient(circle at 15% 25%, rgba(225, 29, 72, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.24) 0%, transparent 50%),
+    linear-gradient(180deg, #FFF1F2 0%, #F0FDF4 50%, #FFFBEB 100%);
   overflow: hidden;
-  border-top: 1px solid var(--card-border);
+  border-top: 1px solid rgba(225, 29, 72, 0.15);
 }
 
 [data-theme="dark"] .quiz-section {
-  background-color: #0b0e14;
-  background-image: 
-    radial-gradient(circle at 50% 20%, rgba(239, 68, 68, 0.12) 0%, transparent 65%),
-    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+  background: 
+    radial-gradient(circle at 15% 25%, rgba(239, 68, 68, 0.28) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.28) 0%, transparent 50%),
+    linear-gradient(180deg, #160A11 0%, #0C1A16 50%, #161209 100%);
 }
 
 .quiz-container {
   max-width: 780px;
   margin: 0 auto;
-  background: var(--card-bg);
-  border: 1.5px solid rgba(217, 119, 6, 0.3);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
-  box-shadow: 0 15px 40px rgba(200, 16, 46, 0.12), 0 0 30px rgba(245, 158, 11, 0.1);
+  box-shadow: 0 15px 40px rgba(200, 16, 46, 0.1), 0 0 30px rgba(245, 158, 11, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   position: relative;
   overflow: hidden;
   z-index: 1;
+}
+
+[data-theme="dark"] .quiz-container {
+  background: rgba(21, 26, 37, 0.85);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(239, 68, 68, 0.15);
 }
 
 .quiz-container::before {
@@ -1718,13 +1762,15 @@ section {
    ========================================================================== */
 
 .site-footer {
-  background: #080B10;
+  background: #0A0D14;
   color: #F8FAFC;
-  padding: 70px 0 30px;
+  padding: 75px 0 30px;
   border-top: 4px solid var(--merah-utama);
   position: relative;
   background-image: 
-    radial-gradient(ellipse at 50% 0%, rgba(200, 16, 46, 0.3) 0%, transparent 60%);
+    radial-gradient(circle at 15% 10%, rgba(225, 29, 72, 0.35) 0%, transparent 55%),
+    radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.25) 0%, transparent 50%),
+    linear-gradient(180deg, #110A12 0%, #080B10 100%);
   overflow: hidden;
 }
 
