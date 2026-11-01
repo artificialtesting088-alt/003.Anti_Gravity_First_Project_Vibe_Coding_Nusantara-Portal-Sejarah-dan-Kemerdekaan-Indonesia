@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     timelineContainer.innerHTML = items.map((item, index) => `
-      <div class="timeline-item reveal-on-scroll">
+      <div class="timeline-item visible">
         <div class="timeline-node"></div>
         <div class="timeline-card">
           <div class="timeline-card-header">
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!heroesContainer || !HISTORY_DATA.heroes) return;
 
     heroesContainer.innerHTML = HISTORY_DATA.heroes.map(hero => `
-      <div class="hero-card reveal-on-scroll" data-hero-id="${hero.id}">
+      <div class="hero-card visible" data-hero-id="${hero.id}">
         <div class="hero-card-img-wrap">
           <img src="${hero.image}" alt="${hero.name}" loading="lazy" onerror="this.src='assets/images/proklamasi.jpg'">
           <span class="hero-card-period">${hero.period}</span>
