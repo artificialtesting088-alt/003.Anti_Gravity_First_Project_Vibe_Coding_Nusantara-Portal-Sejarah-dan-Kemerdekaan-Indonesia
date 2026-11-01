@@ -314,24 +314,21 @@ body {
 
 .hero-section {
   position: relative;
-  min-height: auto;
+  min-height: 640px;
+  max-height: 840px;
   display: flex;
   align-items: center;
-  padding: 100px 0 50px;
+  padding: 110px 0 60px;
   overflow: hidden;
   background: 
-    radial-gradient(ellipse at 50% 0%, rgba(225, 29, 72, 0.22) 0%, transparent 65%),
-    radial-gradient(circle at 15% 35%, rgba(245, 158, 11, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-    linear-gradient(180deg, #FFF0F3 0%, #FFFBF0 55%, #FDF2F8 100%);
+    linear-gradient(180deg, rgba(200, 16, 46, 0.22) 0%, rgba(255, 255, 255, 0.28) 45%, rgba(255, 255, 255, 0.85) 100%),
+    url('../assets/images/bg_hero_merah_putih.jpg') no-repeat center top / cover;
 }
 
 [data-theme="dark"] .hero-section {
   background: 
-    radial-gradient(ellipse at 50% 0%, rgba(239, 68, 68, 0.32) 0%, transparent 65%),
-    radial-gradient(circle at 15% 35%, rgba(245, 158, 11, 0.22) 0%, transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
-    linear-gradient(180deg, #180910 0%, #0D121D 60%, #0B0F19 100%);
+    linear-gradient(180deg, rgba(15, 23, 42, 0.65) 0%, rgba(18, 10, 16, 0.6) 45%, rgba(11, 15, 25, 0.92) 100%),
+    url('../assets/images/bg_hero_merah_putih.jpg') no-repeat center top / cover;
 }
 
 .hero-backdrop {
@@ -366,14 +363,14 @@ body {
   max-width: 95vw;
   height: 480px;
   background: url('../assets/images/nusantara_map.svg') no-repeat center center / contain;
-  opacity: 0.55;
+  opacity: 0.35;
   filter: drop-shadow(0 0 35px rgba(200, 16, 46, 0.45));
   pointer-events: none;
   animation: floatMap 12s ease-in-out infinite alternate;
 }
 
 [data-theme="dark"] .hero-map-watermark {
-  opacity: 0.65;
+  opacity: 0.45;
   filter: drop-shadow(0 0 45px rgba(239, 68, 68, 0.65));
 }
 
@@ -389,10 +386,23 @@ body {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 860px;
   margin: 0 auto;
   text-align: center;
+  padding: 2.5rem 2.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(200, 16, 46, 0.2), 0 0 35px rgba(245, 158, 11, 0.15);
+}
+
+[data-theme="dark"] .hero-content {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(239, 68, 68, 0.25);
 }
 
 .badge-tag {
@@ -587,37 +597,23 @@ section {
 .timeline-section {
   position: relative;
   background: 
-    linear-gradient(180deg, #FFF1F2 0%, #FFFBEB 25%, #F0FDFA 55%, #FFF7ED 85%, #FFF1F2 100%);
+    linear-gradient(180deg, rgba(255, 240, 240, 0.5) 0%, rgba(255, 255, 255, 0.35) 40%, rgba(255, 240, 240, 0.6) 100%),
+    url('../assets/images/bg_timeline_merah_putih.jpg') no-repeat center top / cover;
+  background-attachment: fixed;
   overflow: hidden;
-  border-top: 1px solid rgba(225, 29, 72, 0.15);
-  border-bottom: 1px solid rgba(225, 29, 72, 0.15);
+  border-top: 2px solid var(--merah-utama);
+  border-bottom: 2px solid var(--merah-utama);
 }
 
 [data-theme="dark"] .timeline-section {
   background: 
-    radial-gradient(circle at 15% 20%, rgba(225, 29, 72, 0.22) 0%, transparent 50%),
-    radial-gradient(circle at 85% 45%, rgba(245, 158, 11, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 15% 75%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
-    radial-gradient(circle at 85% 90%, rgba(249, 115, 22, 0.2) 0%, transparent 50%),
-    linear-gradient(180deg, #0C101C 0%, #151627 35%, #0F1C24 70%, #17111B 100%);
+    linear-gradient(180deg, rgba(11, 15, 25, 0.8) 0%, rgba(17, 24, 39, 0.7) 40%, rgba(11, 15, 25, 0.88) 100%),
+    url('../assets/images/bg_timeline_merah_putih.jpg') no-repeat center top / cover;
+  background-attachment: fixed;
 }
 
-/* Ambient Colorful Glow Orbs for Living Atmosphere */
 .ambient-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.65;
-  mix-blend-mode: multiply;
-  animation: floatAmbient 18s ease-in-out infinite alternate;
-}
-
-[data-theme="dark"] .ambient-glow {
-  mix-blend-mode: screen;
-  opacity: 0.45;
-  filter: blur(95px);
+  display: none;
 }
 
 .ambient-glow-1 {
@@ -926,10 +922,9 @@ section {
 .heroes-section {
   position: relative;
   background: 
-    radial-gradient(circle at 15% 25%, rgba(225, 29, 72, 0.22) 0%, transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.24) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(190, 18, 60, 0.15) 0%, transparent 65%),
-    linear-gradient(180deg, #FFF7ED 0%, #FFF1F2 50%, #FDF4FF 100%);
+    linear-gradient(180deg, rgba(255, 250, 245, 0.92) 0%, rgba(255, 241, 242, 0.82) 50%, rgba(255, 250, 245, 0.94) 100%),
+    url('../assets/images/bg_hero_merah_putih.jpg') no-repeat center center / cover;
+  background-attachment: fixed;
   overflow: hidden;
   border-top: 1px solid rgba(225, 29, 72, 0.15);
   border-bottom: 1px solid rgba(225, 29, 72, 0.15);
@@ -937,9 +932,9 @@ section {
 
 [data-theme="dark"] .heroes-section {
   background: 
-    radial-gradient(circle at 15% 25%, rgba(239, 68, 68, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.25) 0%, transparent 50%),
-    linear-gradient(180deg, #170911 0%, #1C0E1E 50%, #0D101C 100%);
+    linear-gradient(180deg, rgba(11, 15, 25, 0.94) 0%, rgba(24, 12, 18, 0.84) 50%, rgba(11, 15, 25, 0.96) 100%),
+    url('../assets/images/bg_hero_merah_putih.jpg') no-repeat center center / cover;
+  background-attachment: fixed;
 }
 
 .heroes-grid {
@@ -1076,10 +1071,9 @@ section {
 .proklamasi-section {
   position: relative;
   background: 
-    radial-gradient(ellipse at 50% 40%, rgba(245, 158, 11, 0.28) 0%, rgba(225, 29, 72, 0.18) 50%, transparent 75%),
-    radial-gradient(circle at 10% 85%, rgba(234, 88, 12, 0.22) 0%, transparent 45%),
-    radial-gradient(circle at 90% 15%, rgba(225, 29, 72, 0.25) 0%, transparent 45%),
-    linear-gradient(180deg, #FEFCE8 0%, #FFF5F5 50%, #FEF3C7 100%);
+    radial-gradient(ellipse at 50% 40%, rgba(245, 158, 11, 0.25) 0%, rgba(225, 29, 72, 0.15) 50%, transparent 75%),
+    linear-gradient(180deg, rgba(254, 252, 232, 0.9) 0%, rgba(255, 245, 245, 0.82) 50%, rgba(254, 243, 199, 0.9) 100%),
+    url('../assets/images/bg_timeline_merah_putih.jpg') no-repeat center center / cover;
   border-top: 2px solid rgba(217, 119, 6, 0.35);
   border-bottom: 2px solid rgba(217, 119, 6, 0.35);
   overflow: hidden;
@@ -1087,9 +1081,9 @@ section {
 
 [data-theme="dark"] .proklamasi-section {
   background: 
-    radial-gradient(ellipse at 50% 40%, rgba(245, 158, 11, 0.32) 0%, rgba(239, 68, 68, 0.28) 50%, transparent 75%),
-    radial-gradient(circle at 10% 85%, rgba(234, 88, 12, 0.25) 0%, transparent 45%),
-    linear-gradient(180deg, #181007 0%, #1F0D14 50%, #130A17 100%);
+    radial-gradient(ellipse at 50% 40%, rgba(245, 158, 11, 0.3) 0%, rgba(239, 68, 68, 0.25) 50%, transparent 75%),
+    linear-gradient(180deg, rgba(24, 16, 7, 0.92) 0%, rgba(31, 13, 20, 0.85) 50%, rgba(19, 10, 23, 0.94) 100%),
+    url('../assets/images/bg_timeline_merah_putih.jpg') no-repeat center center / cover;
 }
 
 /* Iconic Vector Proklamasi Silhouette (Bung Karno di Mikrofon, Bung Hatta, Sang Saka Merah Putih) */
@@ -1324,10 +1318,10 @@ section {
 .pancasila-section {
   position: relative;
   background: 
-    radial-gradient(circle at 50% 35%, rgba(245, 158, 11, 0.28) 0%, transparent 65%),
-    radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.18) 0%, transparent 50%),
-    radial-gradient(circle at 85% 80%, rgba(225, 29, 72, 0.2) 0%, transparent 50%),
-    linear-gradient(180deg, #FFFBEB 0%, #F0FDF4 50%, #FFF1F2 100%);
+    radial-gradient(circle at 50% 35%, rgba(245, 158, 11, 0.25) 0%, transparent 65%),
+    linear-gradient(180deg, rgba(255, 251, 235, 0.92) 0%, rgba(240, 253, 244, 0.85) 50%, rgba(255, 241, 242, 0.92) 100%),
+    url('../assets/images/bg_hero_merah_putih.jpg') no-repeat center bottom / cover;
+  background-attachment: fixed;
   overflow: hidden;
   border-top: 1px solid rgba(245, 158, 11, 0.25);
   border-bottom: 1px solid rgba(245, 158, 11, 0.25);
@@ -1336,9 +1330,9 @@ section {
 [data-theme="dark"] .pancasila-section {
   background: 
     radial-gradient(circle at 50% 35%, rgba(245, 158, 11, 0.3) 0%, transparent 65%),
-    radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.22) 0%, transparent 50%),
-    radial-gradient(circle at 85% 80%, rgba(239, 68, 68, 0.25) 0%, transparent 50%),
-    linear-gradient(180deg, #161108 0%, #0C1A14 50%, #190B12 100%);
+    linear-gradient(180deg, rgba(22, 17, 8, 0.94) 0%, rgba(12, 26, 20, 0.88) 50%, rgba(25, 11, 18, 0.94) 100%),
+    url('../assets/images/bg_hero_merah_putih.jpg') no-repeat center bottom / cover;
+  background-attachment: fixed;
 }
 
 .pancasila-box {
@@ -1477,20 +1471,20 @@ section {
 .quiz-section {
   position: relative;
   background: 
-    radial-gradient(circle at 15% 25%, rgba(225, 29, 72, 0.22) 0%, transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.24) 0%, transparent 50%),
-    linear-gradient(180deg, #FFF1F2 0%, #F0FDF4 50%, #FFFBEB 100%);
+    radial-gradient(circle at 15% 25%, rgba(225, 29, 72, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(255, 241, 242, 0.92) 0%, rgba(240, 253, 244, 0.86) 50%, rgba(255, 251, 235, 0.92) 100%),
+    url('../assets/images/bg_timeline_merah_putih.jpg') no-repeat center center / cover;
   overflow: hidden;
   border-top: 1px solid rgba(225, 29, 72, 0.15);
 }
 
 [data-theme="dark"] .quiz-section {
   background: 
-    radial-gradient(circle at 15% 25%, rgba(239, 68, 68, 0.28) 0%, transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.22) 0%, transparent 50%),
-    radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.28) 0%, transparent 50%),
-    linear-gradient(180deg, #160A11 0%, #0C1A16 50%, #161209 100%);
+    radial-gradient(circle at 15% 25%, rgba(239, 68, 68, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(22, 10, 17, 0.94) 0%, rgba(12, 26, 22, 0.88) 50%, rgba(22, 18, 9, 0.94) 100%),
+    url('../assets/images/bg_timeline_merah_putih.jpg') no-repeat center center / cover;
 }
 
 .quiz-container {
