@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     theme: localStorage.getItem('nusantara_theme') || 'light'
   };
 
+  // Helper untuk update ikon tema
+  function updateThemeIcon() {
+    const btn = document.getElementById('btn-theme-toggle');
+    if (!btn) return;
+    btn.innerHTML = state.theme === 'dark' ? '☀️' : '🌙';
+    btn.title = state.theme === 'dark' ? 'Ganti ke Tema Terang' : 'Ganti ke Tema Gelap (Dark Velvet)';
+  }
+
   // Terapkan Tema Tersimpan
   document.documentElement.setAttribute('data-theme', state.theme);
   updateThemeIcon();
@@ -603,12 +611,6 @@ Wakil2 bangsa Indonesia.`;
 
   // Theme Toggle (Dark / Light)
   const themeToggle = document.getElementById('btn-theme-toggle');
-  function updateThemeIcon() {
-    if (!themeToggle) return;
-    themeToggle.innerHTML = state.theme === 'dark' ? '☀️' : '🌙';
-    themeToggle.title = state.theme === 'dark' ? 'Ganti ke Tema Terang' : 'Ganti ke Tema Gelap (Dark Velvet)';
-  }
-
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       soundClick();
@@ -656,12 +658,20 @@ Wakil2 bangsa Indonesia.`;
             obs.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.05, rootMargin: '60px 0px' });
 
       reveals.forEach(el => observer.observe(el));
     } else {
       reveals.forEach(el => el.classList.add('visible'));
     }
+
+    // Segera tampilkan elemen yang sudah berada di viewport
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 100) {
+        el.classList.add('visible');
+      }
+    });
   }
 
   // Inisialisasi awal
