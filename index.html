@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nusantara: Perjalanan Sejarah & Kemerdekaan Indonesia</title>
+  
+  <!-- Meta SEO & Open Graph -->
+  <meta name="description" content="Jelajahi linimasa sejarah agung bangsa Indonesia dari era peradaban kuno, kerajaan maritim, perjuangan pahlawan, hingga detik proklamasi kemerdekaan 17 Agustus 1945.">
+  <meta name="keywords" content="sejarah indonesia, nusantara, proklamasi 1945, soekarno hatta, majapahit, sriwijaya, pahlawan nasional, garuda pancasila, merah putih">
+  <meta name="author" content="artificialtesting088-alt">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Merriweather -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Merriweather:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%2250%22 fill=%22%23C8102E%22/><rect y=%2250%22 width=%22100%22 height=%2250%22 fill=%22%23FFFFFF%22/></svg>">
+</head>
+<body>
+
+  <!-- ==========================================
+       Header & Navigasi
+       ========================================== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#beranda" class="brand-logo" aria-label="Nusantara Beranda">
+          <div class="flag-badge">
+            <div class="flag-red"></div>
+            <div class="flag-white"></div>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">NUSANTARA</span>
+            <span class="brand-subtitle">Sejarah Bangsa Indonesia</span>
+          </div>
+        </a>
+
+        <!-- Menu Navigasi Utama -->
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+          <li><a href="#linimasa" class="nav-link">Linimasa Era</a></li>
+          <li><a href="#pahlawan" class="nav-link">Pahlawan Bangsa</a></li>
+          <li><a href="#proklamasi" class="nav-link">Proklamasi 1945</a></li>
+          <li><a href="#pancasila" class="nav-link">Garuda Pancasila</a></li>
+          <li><a href="#kuis" class="nav-link">Uji Wawasan</a></li>
+        </ul>
+
+        <!-- Nav Actions (Audio & Tema) -->
+        <div class="nav-actions">
+          <button class="icon-btn" id="btn-sound-toggle" title="Nyalakan Suara Latar (Ambient)" aria-label="Suara Latar">
+            🔇
+          </button>
+          <button class="icon-btn" id="btn-theme-toggle" title="Ganti ke Tema Gelap" aria-label="Ganti Tema">
+            🌙
+          </button>
+          <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Buka Menu">
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       Hero Section
+       ========================================== -->
+  <section class="hero-section" id="beranda">
+    <div class="hero-backdrop">
+      <div class="patriotic-glow"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content reveal-on-scroll">
+        <div class="badge-tag">
+          <span class="badge-dot"></span>
+          Merah Putih Menggema di Sepanjang Zaman
+        </div>
+
+        <h1 class="hero-title">
+          Jejak Peradaban & Gelora Kemerdekaan <span class="highlight">Indonesia</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Dari fajar peradaban kuno, keagungan kemaharajaan maritim Sriwijaya dan Majapahit, heroisme perjuangan melawan kolonialisme, hingga detik sakral Proklamasi 17 Agustus 1945.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#linimasa" class="btn btn-primary">
+            <span>Jelajahi Linimasa Sejarah</span>
+            <span>&darr;</span>
+          </a>
+          <a href="#proklamasi" class="btn btn-secondary">
+            <span>Dengarkan Teks Proklamasi</span>
+            <span>▶</span>
+          </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">17.500+</span>
+            <span class="stat-label">Pulau Nusantara</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">1.340+</span>
+            <span class="stat-label">Suku Bangsa</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">7 Era</span>
+            <span class="stat-label">Perjalanan Sejarah</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">1 Visi</span>
+            <span class="stat-label">Bhinneka Tunggal Ika</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Linimasa Sejarah Interaktif (Timeline)
+       ========================================== -->
+  <section class="timeline-section" id="linimasa">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag">Kronik Perjalanan Zaman</span>
+        <h2 class="section-title">Linimasa Sejarah Indonesia</h2>
+        <p class="section-desc">
+          Pilih era atau gunakan kolom pencarian untuk mendalami setiap tonggak bersejarah yang membentuk jati diri bangsa Indonesia.
+        </p>
+      </div>
+
+      <!-- Live Search Box -->
+      <div style="max-width: 560px; margin: 0 auto 2.5rem;" class="reveal-on-scroll">
+        <div style="position: relative;">
+          <input 
+            type="text" 
+            id="search-history" 
+            placeholder="Ketik nama peristiwa, kerajaan, pahlawan, atau perjanjian..." 
+            style="width: 100%; padding: 0.9rem 1.4rem 0.9rem 2.8rem; border-radius: var(--radius-full); border: 2px solid var(--card-border); background: var(--card-bg); color: var(--gelap-teks); font-size: 0.95rem; outline: none; transition: all var(--transisi-cepat); box-shadow: var(--shadow-sm);"
+            onfocus="this.style.borderColor='var(--merah-utama)'; this.style.boxShadow='var(--shadow-glow)';"
+            onblur="this.style.borderColor='var(--card-border)'; this.style.boxShadow='var(--shadow-sm)';"
+          >
+          <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--abu-sedang);">🔍</span>
+        </div>
+      </div>
+
+      <!-- Era Filter Tabs -->
+      <div class="era-tabs reveal-on-scroll" id="era-tabs">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+      <!-- Timeline Track -->
+      <div class="timeline-track" id="timeline-track">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Tokoh Pahlawan & Pemimpin Bangsa
+       ========================================== -->
+  <section class="heroes-section" id="pahlawan">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag">Keteladanan & Keteguhan Jiwa</span>
+        <h2 class="section-title">Tokoh Pahlawan Nasional</h2>
+        <p class="section-desc">
+          Mengenang para pejuang, negarawan, dan pemikir yang mendedikasikan jiwa dan raganya demi kedaulatan Ibu Pertiwi.
+        </p>
+      </div>
+
+      <div class="heroes-grid" id="heroes-grid">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Ruang Khusus: Proklamasi 17 Agustus 1945
+       ========================================== -->
+  <section class="proklamasi-section" id="proklamasi">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag">Tonggak Sakral Kedaulatan</span>
+        <h2 class="section-title">Detik-Detik Proklamasi Kemerdekaan</h2>
+        <p class="section-desc">
+          Jumat, 17 Agustus 1945 pukul 10.00 WIB di Jl. Pegangsaan Timur No. 56, Jakarta Pusat. Lahirnya negara merdeka, berdaulat, dan bermartabat.
+        </p>
+      </div>
+
+      <div class="proklamasi-wrapper reveal-on-scroll">
+        <!-- Naskah Proklamasi -->
+        <div class="proklamasi-parchment">
+          <div class="parchment-stamp">Otentik 1945</div>
+          <div class="naskah-tabs">
+            <button class="naskah-tab-btn active" id="tab-otentik">Naskah Ketikan (Sayuti Melik)</button>
+            <button class="naskah-tab-btn" id="tab-klad">Naskah Klad (Tulisan Bung Karno)</button>
+          </div>
+
+          <div class="proklamasi-text-header">PROKLAMASI</div>
+          <div class="proklamasi-text-body" id="proklamasi-text-display">
+Kami bangsa Indonesia dengan ini menjatakan kemerdekaan Indonesia.
+
+Hal-hal jang mengenai pemindahan kekoeasaan d.l.l., diselenggarakan dengan tjara seksama dan dalam tempo jang sesingkat-singkatnja.
+
+Djakarta, hari 17 boelan 8 tahoen 05.
+Atas nama bangsa Indonesia.
+Soekarno/Hatta.
+          </div>
+
+          <div class="proklamasi-actions">
+            <button class="btn-audio-proklamasi" id="btn-read-proklamasi">
+              <span>▶</span> Dengarkan Kumandang Proklamasi
+            </button>
+          </div>
+        </div>
+
+        <!-- Showcase Visual Dokumentasi -->
+        <div>
+          <div class="proklamasi-img-showcase">
+            <img src="assets/images/teks_proklamasi.jpg" id="proklamasi-img-view" alt="Naskah Otentik Proklamasi 17 Agustus 1945">
+          </div>
+          <div style="margin-top: 1.25rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 180px; padding: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-md);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--merah-utama); text-transform: uppercase;">Pembaca Proklamasi</div>
+              <div style="font-weight: 800; font-size: 1.05rem;">Ir. Soekarno</div>
+              <div style="font-size: 0.85rem; color: var(--abu-sedang);">Didampingi Drs. Moh. Hatta</div>
+            </div>
+            <div style="flex: 1; min-width: 180px; padding: 1rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-md);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--merah-utama); text-transform: uppercase;">Penjahit Sang Saka</div>
+              <div style="font-weight: 800; font-size: 1.05rem;">Ibu Fatmawati</div>
+              <div style="font-size: 0.85rem; color: var(--abu-sedang);">Kain katun merah & putih</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Garuda Pancasila & Nilai Luhur Bangsa
+       ========================================== -->
+  <section class="pancasila-section" id="pancasila">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag">Dasar Falsafah Negara</span>
+        <h2 class="section-title">Garuda Pancasila & Bhinneka Tunggal Ika</h2>
+        <p class="section-desc">
+          Lambang kemegahan negara yang memadukan keutuhan nilai spiritualitas, kemanusiaan, persatuan, demokrasi musyawarah, dan keadilan sosial.
+        </p>
+      </div>
+
+      <div class="pancasila-box reveal-on-scroll">
+        <div class="pancasila-layout">
+          <div class="pancasila-symbol">
+            <img src="assets/images/pancasila.png" alt="Lambang Garuda Pancasila" loading="lazy">
+            <div class="pancasila-motto">"Bhinneka Tunggal Ika"</div>
+            <div style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--abu-sedang);">
+              17 Helai Sayap &bull; 8 Helai Ekor &bull; 19 Helai Pangkal Ekor &bull; 45 Helai Leher
+            </div>
+          </div>
+
+          <!-- Lima Sila -->
+          <div class="sila-list">
+            <div class="sila-item">
+              <div class="sila-number">1</div>
+              <div>
+                <div class="sila-title">Ketuhanan Yang Maha Esa</div>
+                <div class="sila-desc">Simbol Bintang Emas bersudut lima berlatar perisai hitam, lambang cahaya rohani dari Tuhan Yang Maha Esa kepada setiap insan.</div>
+              </div>
+            </div>
+
+            <div class="sila-item">
+              <div class="sila-number">2</div>
+              <div>
+                <div class="sila-title">Kemanusiaan yang Adil dan Beradab</div>
+                <div class="sila-desc">Simbol Rantai Emas yang saling bertaut kokoh antara mata rantai bulat (wanita) dan persegi (pria) tanpa membedakan harkat martabat.</div>
+              </div>
+            </div>
+
+            <div class="sila-item">
+              <div class="sila-number">3</div>
+              <div>
+                <div class="sila-title">Persatuan Indonesia</div>
+                <div class="sila-desc">Simbol Pohon Beringin yang rindang dengan sulur dan akar tunjang yang menghunjam dalam ke tanah, menjadi naungan aman bagi segenap tumpah darah.</div>
+              </div>
+            </div>
+
+            <div class="sila-item">
+              <div class="sila-number">4</div>
+              <div>
+                <div class="sila-title">Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan</div>
+                <div class="sila-desc">Simbol Kepala Banteng, hewan sosial yang senang berkumpul, mencerminkan budaya musyawarah mufakat dalam setiap pengambilan keputusan bersama.</div>
+              </div>
+            </div>
+
+            <div class="sila-item">
+              <div class="sila-number">5</div>
+              <div>
+                <div class="sila-title">Keadilan Sosial bagi Seluruh Rakyat Indonesia</div>
+                <div class="sila-desc">Simbol Padi dan Kapas, melambangkan sandang dan pangan sebagai kemakmuran hakiki yang merata untuk seluruh rakyat Indonesia.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Kuis Interaktif: Uji Wawasan Sejarah
+       ========================================== -->
+  <section class="quiz-section" id="kuis">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag">Kuis Trivia Interaktif</span>
+        <h2 class="section-title">Seberapa Paham Kamu Sejarah Indonesia?</h2>
+        <p class="section-desc">
+          Uji wawasan kebangsaanmu melalui kuis interaktif berikut dan dapatkan lencana penghargaan sejarah nusantara!
+        </p>
+      </div>
+
+      <div class="quiz-container reveal-on-scroll">
+        <!-- Kotak Pertanyaan Kuis Aktif -->
+        <div id="quiz-box">
+          <div class="quiz-header">
+            <span class="quiz-progress-text" id="quiz-progress-text">Pertanyaan 1 dari 6</span>
+            <span class="quiz-score-badge" id="quiz-score-badge">Skor: 0</span>
+          </div>
+
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+
+          <div class="quiz-question-box">
+            <h3 class="quiz-question-text" id="quiz-question-text">Memuat pertanyaan...</h3>
+            <div class="quiz-options" id="quiz-options-container">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <div class="quiz-explanation" id="quiz-explanation"></div>
+
+          <div class="quiz-actions">
+            <button class="btn btn-primary" id="quiz-next-btn" style="display: none;">
+              Pertanyaan Selanjutnya &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- Tampilan Hasil Kuis -->
+        <div class="quiz-result-view" id="quiz-result-view">
+          <div class="quiz-result-icon">🏆</div>
+          <div class="quiz-result-score" id="quiz-final-score">0 Poin</div>
+          <div class="quiz-result-badge" id="quiz-final-badge">Sejarawan Sejati</div>
+          <p class="quiz-result-feedback" id="quiz-final-feedback">Memuat hasil...</p>
+          <button class="btn btn-primary" id="btn-quiz-retry">
+            <span>🔄</span> Ulangi Kuis
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       Footer & Hak Cipta
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div class="flag-badge">
+              <div class="flag-red"></div>
+              <div class="flag-white"></div>
+            </div>
+            <h3 style="margin: 0;">NUSANTARA</h3>
+          </div>
+          <p>
+            Portal interaktif sejarah, peradaban, dan nilai-nilai luhur kemerdekaan Indonesia. Dirancang dengan estetika Merah Putih yang modern, elegan, dan informatif.
+          </p>
+          <div class="footer-quote">
+            "Jasmerah: Jangan Sekali-kali Meninggalkan Sejarah!"
+            <div style="font-size: 0.8rem; margin-top: 0.25rem; font-weight: 700; color: #FFFFFF;">— Ir. Soekarno</div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Jelajahi Era</h4>
+          <ul>
+            <li><a href="#linimasa" onclick="resetTimelineFilter()">Semua Era</a></li>
+            <li><a href="#linimasa">Sriwijaya & Majapahit</a></li>
+            <li><a href="#linimasa">Kesultanan Nusantara</a></li>
+            <li><a href="#proklamasi">Detik Proklamasi 1945</a></li>
+            <li><a href="#pancasila">Nilai Luhur Pancasila</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Tautan Proyek</h4>
+          <ul>
+            <li><a href="https://github.com/artificialtesting088-alt/003.Anti_Gravity_First_Project" target="_blank" rel="noopener">Repositori GitHub</a></li>
+            <li><a href="#kuis">Kuis Trivia</a></li>
+            <li><a href="#pahlawan">Daftar Pahlawan</a></li>
+            <li><a href="#beranda">Kembali ke Atas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>Nusantara: Sejarah Indonesia</strong> &bull; Dibuat untuk repositori <code>003.Anti_Gravity_First_Project</code> (GitHub Pages).
+        </div>
+        <button class="back-to-top-btn" id="back-to-top">
+          <span>Ke Atas</span> &uarr;
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       Modal Dialog Universal
+       ========================================== -->
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container" id="modal-container">
+      <!-- Injected via JavaScript -->
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
