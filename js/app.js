@@ -157,7 +157,22 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.era-tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.currentEra = btn.dataset.era;
-      renderTimeline();
+      
+      // Luxury smooth crossfade transition
+      if (timelineContainer) {
+        timelineContainer.style.opacity = '0';
+        timelineContainer.style.transform = 'translateY(16px) scale(0.98)';
+        timelineContainer.style.filter = 'blur(6px)';
+        timelineContainer.style.transition = 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+        setTimeout(() => {
+          renderTimeline();
+          timelineContainer.style.opacity = '1';
+          timelineContainer.style.transform = 'translateY(0) scale(1)';
+          timelineContainer.style.filter = 'blur(0)';
+        }, 350);
+      } else {
+        renderTimeline();
+      }
     });
   }
 
@@ -190,25 +205,28 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    timelineContainer.innerHTML = items.map((item, index) => `
-      <div class="timeline-item visible">
-        <div class="timeline-node"></div>
-        <div class="timeline-card">
-          <div class="timeline-card-header">
-            <span class="timeline-period">${item.period}</span>
-            <span class="timeline-tag">${item.badge}</span>
+    timelineContainer.innerHTML = `
+      <div class="timeline-track-beam" id="timeline-track-beam"></div>
+      ${items.map((item, index) => `
+        <div class="timeline-item reveal-lux" style="--item-idx: ${index % 6};">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <span class="timeline-period">${item.period}</span>
+              <span class="timeline-tag">${item.badge}</span>
+            </div>
+            <div class="timeline-img-wrap">
+              <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='assets/images/borobudur.jpg'">
+            </div>
+            <h3 class="timeline-item-title">${item.title}</h3>
+            <p class="timeline-item-desc">${item.summary}</p>
+            <button class="btn-card-read" data-id="${item.id}">
+              Baca Kisah Lengkap <span>&rarr;</span>
+            </button>
           </div>
-          <div class="timeline-img-wrap">
-            <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='assets/images/borobudur.jpg'">
-          </div>
-          <h3 class="timeline-item-title">${item.title}</h3>
-          <p class="timeline-item-desc">${item.summary}</p>
-          <button class="btn-card-read" data-id="${item.id}">
-            Baca Kisah Lengkap <span>&rarr;</span>
-          </button>
         </div>
-      </div>
-    `).join('');
+      `).join('')}
+    `;
 
     // Hubungkan tombol baca selengkapnya
     timelineContainer.querySelectorAll('.btn-card-read').forEach(btn => {
@@ -239,8 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderHeroes() {
     if (!heroesContainer || !HISTORY_DATA.heroes) return;
 
-    heroesContainer.innerHTML = HISTORY_DATA.heroes.map(hero => `
-      <div class="hero-card visible" data-hero-id="${hero.id}">
+    heroesContainer.innerHTML = HISTORY_DATA.heroes.map((hero, index) => `
+      <div class="hero-card reveal-lux" style="--item-idx: ${index};" data-hero-id="${hero.id}">
         <div class="hero-card-img-wrap">
           <img src="${hero.image}" alt="${hero.name}" loading="lazy" onerror="this.src='assets/images/proklamasi.jpg'">
           <span class="hero-card-period">${hero.period}</span>
@@ -408,6 +426,7 @@ Wakil2 bangsa Indonesia.`;
   }
 
   if (btnReadProklamasi && audioSukarno) {
+    const parchmentEl = document.querySelector('.proklamasi-parchment');
     btnReadProklamasi.addEventListener('click', () => {
       soundClick();
       if (audioSukarno.paused) {
@@ -415,6 +434,7 @@ Wakil2 bangsa Indonesia.`;
           if (audioIcon) audioIcon.innerText = '⏸';
           if (audioText) audioText.innerText = 'Jeda Suara Bung Karno';
           if (soundwaveAnim) soundwaveAnim.style.display = 'flex';
+          if (parchmentEl) parchmentEl.classList.add('audio-playing');
         }).catch(err => {
           console.warn('Audio playback error, fallback to speech synth:', err);
           fallbackSpeechProklamasi();
@@ -424,6 +444,7 @@ Wakil2 bangsa Indonesia.`;
         if (audioIcon) audioIcon.innerText = '▶';
         if (audioText) audioText.innerText = 'Lanjutkan Suara Bung Karno';
         if (soundwaveAnim) soundwaveAnim.style.display = 'none';
+        if (parchmentEl) parchmentEl.classList.remove('audio-playing');
       }
     });
 
@@ -439,6 +460,7 @@ Wakil2 bangsa Indonesia.`;
       if (audioIcon) audioIcon.innerText = '▶';
       if (audioText) audioText.innerText = 'Putar Ulang Suara Bung Karno';
       if (soundwaveAnim) soundwaveAnim.style.display = 'none';
+      if (parchmentEl) parchmentEl.classList.remove('audio-playing');
       soundSuccess();
     });
   }
@@ -679,34 +701,84 @@ Wakil2 bangsa Indonesia.`;
     });
   }
 
-  // 11. Intersection Observer for Scroll Animations
+  // 11. Intersection Observer for Ultra-Luxury Scroll Animations
   function initScrollReveal() {
-    const reveals = document.querySelectorAll('.reveal-on-scroll:not(.visible)');
+    const reveals = document.querySelectorAll('.reveal-lux:not(.is-revealed)');
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('is-revealed');
             obs.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.05, rootMargin: '60px 0px' });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
       reveals.forEach(el => observer.observe(el));
     } else {
-      reveals.forEach(el => el.classList.add('visible'));
+      reveals.forEach(el => el.classList.add('is-revealed'));
     }
 
     // Segera tampilkan elemen yang sudah berada di viewport
     reveals.forEach(el => {
       const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight + 100) {
-        el.classList.add('visible');
+      if (rect.top < window.innerHeight - 40) {
+        setTimeout(() => el.classList.add('is-revealed'), 80);
       }
     });
   }
 
-  // 12. Dynamic Patriotic Particles (Embers & Gold/Red Sparks)
+  // 12. Dynamic Timeline Scroll Progress Beam
+  function initTimelineScrollBeam() {
+    const track = document.getElementById('timeline-track');
+    function updateBeam() {
+      const beam = document.getElementById('timeline-track-beam');
+      if (!track || !beam) return;
+
+      const rect = track.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const start = windowHeight * 0.75;
+      const totalDist = rect.height;
+      const scrolled = start - rect.top;
+      let progress = 0;
+
+      if (scrolled > 0 && totalDist > 0) {
+        progress = Math.min(Math.max((scrolled / totalDist) * 100, 0), 100);
+      }
+      beam.style.height = `${progress}%`;
+
+      // Illuminate nodes passed by the progress beam
+      const nodes = track.querySelectorAll('.timeline-node');
+      nodes.forEach(node => {
+        const nodeRect = node.getBoundingClientRect();
+        if (nodeRect.top < start) {
+          node.classList.add('node-lit');
+        } else {
+          node.classList.remove('node-lit');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateBeam);
+    }, { passive: true });
+    updateBeam();
+  }
+
+  // 13. Dynamic Card Mouse Spotlight
+  function initCardSpotlight() {
+    document.addEventListener('mousemove', (e) => {
+      const card = e.target.closest('.timeline-card, .hero-card');
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    }, { passive: true });
+  }
+
+  // 14. Dynamic Patriotic Particles (Embers & Gold/Red Sparks)
   function initParticleCanvas() {
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
@@ -783,5 +855,7 @@ Wakil2 bangsa Indonesia.`;
   renderQuizQuestion();
   initScrollReveal();
   initParticleCanvas();
+  initTimelineScrollBeam();
+  initCardSpotlight();
 });
 
