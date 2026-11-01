@@ -214,9 +214,27 @@ Soekarno/Hatta.
           </div>
 
           <div class="proklamasi-actions">
-            <button class="btn-audio-proklamasi" id="btn-read-proklamasi">
-              <span>▶</span> Dengarkan Kumandang Proklamasi
-            </button>
+            <audio id="audio-sukarno" preload="metadata">
+              <source src="assets/audio/proklamasi_sukarno.mp3" type="audio/mpeg">
+              <source src="assets/audio/proklamasi_sukarno.ogg" type="audio/ogg">
+              Peramban Anda tidak mendukung pemutar audio.
+            </audio>
+
+            <div class="audio-player-box">
+              <button class="btn-audio-proklamasi" id="btn-read-proklamasi" title="Dengarkan rekaman asli suara Bung Karno">
+                <span id="audio-icon">▶</span> <span id="audio-text">Dengarkan Suara Asli Bung Karno (1945)</span>
+              </button>
+              <div class="audio-time-badge" id="audio-time">00:00 / 00:49</div>
+            </div>
+
+            <div class="soundwave-anim" id="soundwave-anim" style="display: none;">
+              <span class="bar bar-1"></span>
+              <span class="bar bar-2"></span>
+              <span class="bar bar-3"></span>
+              <span class="bar bar-4"></span>
+              <span class="bar bar-5"></span>
+              <span class="bar bar-6"></span>
+            </div>
           </div>
         </div>
 

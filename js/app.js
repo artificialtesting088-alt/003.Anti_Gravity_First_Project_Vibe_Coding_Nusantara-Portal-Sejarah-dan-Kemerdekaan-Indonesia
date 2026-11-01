@@ -392,34 +392,66 @@ Wakil2 bangsa Indonesia.`;
     });
   }
 
-  // Pembacaan Teks Proklamasi Suara (Web Speech API)
+  // Pemutar Suara Asli Bung Karno (17 Agustus 1945)
+  const audioSukarno = document.getElementById('audio-sukarno');
   const btnReadProklamasi = document.getElementById('btn-read-proklamasi');
-  if (btnReadProklamasi) {
+  const audioIcon = document.getElementById('audio-icon');
+  const audioText = document.getElementById('audio-text');
+  const audioTime = document.getElementById('audio-time');
+  const soundwaveAnim = document.getElementById('soundwave-anim');
+
+  function formatTime(secs) {
+    if (isNaN(secs)) return '00:00';
+    const m = Math.floor(secs / 60);
+    const s = Math.floor(secs % 60);
+    return `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+  }
+
+  if (btnReadProklamasi && audioSukarno) {
     btnReadProklamasi.addEventListener('click', () => {
       soundClick();
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const textToRead = "Proklamasi. Kami bangsa Indonesia dengan ini menyatakan kemerdekaan Indonesia. Hal-hal yang mengenai pemindahan kekuasaan dan lain-lain, diselenggarakan dengan cara seksama dan dalam tempo yang sesingkat-singkatnya. Djakarta, hari 17 bulan 8 tahun 05. Atas nama bangsa Indonesia, Soekarno, Hatta.";
-        const utter = new SpeechSynthesisUtterance(textToRead);
-        utter.lang = 'id-ID';
-        utter.rate = 0.85; // Kecepatan khidmat
-        utter.pitch = 0.9; // Nada berwibawa
-
-        utter.onstart = () => {
-          btnReadProklamasi.innerHTML = '🔊 Sedang Mengumandangkan...';
-          btnReadProklamasi.style.background = 'var(--emas-terang)';
-        };
-
-        utter.onend = () => {
-          btnReadProklamasi.innerHTML = '▶ Dengarkan Kumandang Proklamasi';
-          btnReadProklamasi.style.background = 'var(--merah-utama)';
-        };
-
-        window.speechSynthesis.speak(utter);
+      if (audioSukarno.paused) {
+        audioSukarno.play().then(() => {
+          if (audioIcon) audioIcon.innerText = '⏸';
+          if (audioText) audioText.innerText = 'Jeda Suara Bung Karno';
+          if (soundwaveAnim) soundwaveAnim.style.display = 'flex';
+        }).catch(err => {
+          console.warn('Audio playback error, fallback to speech synth:', err);
+          fallbackSpeechProklamasi();
+        });
       } else {
-        alert('Fitur pembaca suara tidak didukung pada peramban ini.');
+        audioSukarno.pause();
+        if (audioIcon) audioIcon.innerText = '▶';
+        if (audioText) audioText.innerText = 'Lanjutkan Suara Bung Karno';
+        if (soundwaveAnim) soundwaveAnim.style.display = 'none';
       }
     });
+
+    audioSukarno.addEventListener('timeupdate', () => {
+      if (audioTime) {
+        const cur = formatTime(audioSukarno.currentTime);
+        const dur = formatTime(audioSukarno.duration || 49);
+        audioTime.innerText = `${cur} / ${dur}`;
+      }
+    });
+
+    audioSukarno.addEventListener('ended', () => {
+      if (audioIcon) audioIcon.innerText = '▶';
+      if (audioText) audioText.innerText = 'Putar Ulang Suara Bung Karno';
+      if (soundwaveAnim) soundwaveAnim.style.display = 'none';
+      soundSuccess();
+    });
+  }
+
+  function fallbackSpeechProklamasi() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const textToRead = "Proklamasi. Kami bangsa Indonesia dengan ini menyatakan kemerdekaan Indonesia. Hal-hal yang mengenai pemindahan kekuasaan dan lain-lain, diselenggarakan dengan cara seksama dan dalam tempo yang sesingkat-singkatnya. Djakarta, hari 17 bulan 8 tahun 05. Atas nama bangsa Indonesia, Soekarno, Hatta.";
+      const utter = new SpeechSynthesisUtterance(textToRead);
+      utter.lang = 'id-ID';
+      utter.rate = 0.85;
+      window.speechSynthesis.speak(utter);
+    }
   }
 
   // 8. Kuis Interaktif (Trivia Sejarah)

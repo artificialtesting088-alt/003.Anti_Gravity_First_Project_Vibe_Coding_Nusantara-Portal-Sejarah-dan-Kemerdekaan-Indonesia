@@ -22,7 +22,7 @@ const HISTORY_DATA = {
       period: "Abad ke-4 – ke-7 M",
       title: "Fajar Peradaban: Kerajaan Kutai & Tarumanegara",
       badge: "Awal Aksara Nusantara",
-      image: "assets/images/borobudur.jpg",
+      image: "assets/images/prasasti_yupa.jpg",
       summary: "Prasasti Yupa di Muara Kaman, Kutai menandai babak awal sejarah tertulis di Indonesia. Disusul oleh Tarumanegara di Jawa Barat dengan Raja Purnawarman.",
       details: `Penemuan prasasti Yupa bertarikh sekitar abad ke-4 Masehi di Muara Kaman, Kalimantan Timur menjadi bukti tertulis tertua peradaban Nusantara. Raja Mulawarman dicatat mempersembahkan 20.000 ekor sapi kepada kaum Brahmana sebagai wujud kemakmuran.
       
@@ -37,7 +37,7 @@ const HISTORY_DATA = {
       period: "Abad ke-7 – ke-11 M",
       title: "Sriwijaya: Kemaharajaan Bahari Terbesar Asia Tenggara",
       badge: "Kekuatan Maritim Dunia",
-      image: "assets/images/borobudur.jpg",
+      image: "assets/images/sriwijaya.jpg",
       summary: "Pusat perdagangan jalur sutra laut dunia dan mercusuar pembelajaran agama Buddha internasional yang dikunjungi peziarah Tiongkok I-Tsing.",
       details: `Berpusat di tepian Sungai Musi, Palembang, Kedatuan Sriwijaya menguasai Selat Malaka dan Selat Sunda. Sriwijaya menjadi simpul pelayaran dunia yang menghubungkan Tiongkok, India, dan Timur Tengah.
       
@@ -67,7 +67,7 @@ const HISTORY_DATA = {
       period: "1293 – 1527 M",
       title: "Kemaharajaan Majapahit & Sumpah Palapa Pemersatu Nusantara",
       badge: "Wilayah Kejayaan Terluas",
-      image: "assets/images/diponegoro.jpg",
+      image: "assets/images/majapahit.jpg",
       summary: "Didirikan oleh Raden Wijaya, mencapai puncak kejayaan di bawah Raja Hayam Wuruk dan Mahapatih Gajah Mada dengan ikrar suci menyatukan pulau-pulau Nusantara.",
       details: `Setelah menghalau serbuan balatentara Mongol Dinasti Yuan pada tahun 1293, Raden Wijaya mendirikan Kerajaan Majapahit di Trowulan, Jawa Timur.
       
@@ -82,7 +82,7 @@ const HISTORY_DATA = {
       period: "Abad ke-13 – ke-16 M",
       title: "Fajar Islam di Nusantara: Samudera Pasai & Kesultanan Demak",
       badge: "Pintu Masuk Islam & Wali Songo",
-      image: "assets/images/borobudur.jpg",
+      image: "assets/images/masjid_demak.jpg",
       summary: "Samudera Pasai berdiri sebagai kesultanan Islam pertama di Nusantara, disusul Kesultanan Demak yang dipimpin Raden Patah dengan peran besar Wali Songo.",
       details: `Samudera Pasai di Aceh utara menjadi pusat penyebaran Islam pertama di Asia Tenggara, dibuktikan dengan nisan Sultan Malik al-Saleh (1297 M). Pelaut penjelajah kenamaan Ibnu Battuta kagum akan kemakmuran dan keramahan Pasai.
       
@@ -97,7 +97,7 @@ const HISTORY_DATA = {
       period: "Abad ke-16 – ke-17 M",
       title: "Masa Emas Kesultanan: Sultan Agung, Iskandar Muda, & Babullah",
       badge: "Kedaulatan & Perlawanan Awal",
-      image: "assets/images/borobudur.jpg",
+      image: "assets/images/masjid_baiturrahman.jpg",
       summary: "Era kejayaan Mataram Islam di bawah Sultan Agung yang berani menggempur benteng VOC Batavia, kejayaan Kesultanan Aceh Darussalam, dan Kesultanan Ternate penguasa rempah.",
       details: `Sultan Agung Hanyokrokusumo memperluas pengaruh Mataram hingga mencakup hampir seluruh Jawa dan memimpin penyerbuan legendaris ke markas VOC di Batavia tahun 1628 dan 1629. Beliau juga memadukan kalender Saka dan Hijriah menjadi Kalender Jawa.
       
@@ -142,7 +142,7 @@ const HISTORY_DATA = {
       period: "20 Mei 1908 & 1928",
       title: "Kebangkitan Nasional & Ikrar Sakral Sumpah Pemuda",
       badge: "Lahirnya Kesadaran Bersatu",
-      image: "assets/images/kartini.jpg",
+      image: "assets/images/sumpah_pemuda.jpg",
       summary: "Pergeseran perjuangan dari kedaerahan bersenjata menuju pergerakan modern berbasis organisasi intelektual, dipelopori Budi Utomo dan berpuncak pada Sumpah Pemuda 1928.",
       details: `Gagasan dr. Wahidin Soedirohoesodo dan para mahasiswa STOVIA seperti dr. Soetomo melahirkan Boedi Oetomo pada 20 Mei 1908 (kini Hari Kebangkitan Nasional). Gerakan ini memicu lahirnya Sarekat Islam, Indische Partij, dan organisasi kepemudaan.
       
@@ -172,7 +172,7 @@ const HISTORY_DATA = {
       period: "10 November 1945",
       title: "Pertempuran Surabaya: Gelora Takbir Bung Tomo",
       badge: "Hari Pahlawan Nasional",
-      image: "assets/images/soedirman.jpg",
+      image: "assets/images/bung_tomo.jpg",
       summary: "Perlawanan arek-arek Suroboyo mempertahankan kemerdekaan dari serbuan bala tentara Sekutu Inggris, melahirkan Hari Pahlawan Nasional.",
       details: `Paska insiden perobekan warna biru bendera Belanda di Hotel Yamato dan tewasnya Brigadir Jenderal Mallaby, Sekutu mengeluarkan ultimatum agar rakyat Surabaya menyerahkan senjata tanpa syarat sebelum 10 November 1945.
       
@@ -202,7 +202,7 @@ const HISTORY_DATA = {
       period: "23 Agustus – 2 November 1949",
       title: "Konferensi Meja Bundar: Pengakuan Kedaulatan Indonesia",
       badge: "Kemenangan Meja Perundingan",
-      image: "assets/images/proklamasi.jpg",
+      image: "assets/images/kmb_1949.jpg",
       summary: "Puncak perjuangan diplomasi dipimpin Bung Hatta di Den Haag, Belanda, yang memaksa Kerajaan Belanda mengakui kedaulatan penuh Republik Indonesia.",
       details: `Perjuangan kemerdekaan Indonesia merupakan dwi-tunggal: diplomasi politik dan revolusi bersenjata. Di Den Haag, delegasi Republik dipimpin oleh Drs. Mohammad Hatta bertarung argumen secara cermat di Konferensi Meja Bundar (KMB).
       
@@ -217,7 +217,7 @@ const HISTORY_DATA = {
       period: "1955 & 1957 M",
       title: "Konferensi Asia Afrika & Deklarasi Djuanda Kesatuan Maritim",
       badge: "Diplomasi Mengguncang Dunia",
-      image: "assets/images/borobudur.jpg",
+      image: "assets/images/kaa_bandung.jpg",
       summary: "Indonesia memimpin KAA 1955 di Bandung melahirkan Dasasila Bandung, serta Deklarasi Djuanda 1957 yang menyatukan laut kepulauan Nusantara menjadi satu kesatuan wilayah utuh.",
       details: `Pada April 1955, Gedung Merdeka Bandung menjadi saksi berkumpulnya 29 pemimpin negara Asia dan Afrika yang menentang kolonialisme dan imperialisme, melahirkan Gerakan Non-Blok.
       
@@ -245,7 +245,7 @@ const HISTORY_DATA = {
       name: "Drs. Mohammad Hatta",
       title: "Bapak Proklamator & Bapak Koperasi Indonesia",
       period: "1902 – 1980",
-      image: "assets/images/proklamasi_klad.jpg",
+      image: "assets/images/hatta.jpg",
       quote: "Kurang cerdas dapat diperbaiki dengan belajar, kurang cakap dapat dihilangkan dengan pengalaman. Namun tidak jujur itu sulit diperbaiki.",
       role: "Proklamator Kemerdekaan, Pemimpin Delegasi KMB, Tokoh Ekonomi Kerakyatan.",
       bio: "Lahir di Bukittinggi, Sumatera Barat, Bung Hatta adalah intelektual teladan berintegritas tinggi. Beliau mendirikan Perhimpunan Indonesia di Belanda, merumuskan Pasal 33 UUD 1945 tentang perekonomian berbasis kekeluargaan, dan memimpin delegasi Indonesia di Konferensi Meja Bundar.",
@@ -300,7 +300,7 @@ const HISTORY_DATA = {
       name: "Mahapatih Gajah Mada",
       title: "Arsitek Pemersatu Kepulauan Nusantara",
       period: "Abad ke-14 M",
-      image: "assets/images/borobudur.jpg",
+      image: "assets/images/gajah_mada.jpg",
       quote: "Lamun huwus kalah Nusantara, isun amukti palapa...",
       role: "Mahapatih Amangkubumi Kerajaan Majapahit, Pengikrar Sumpah Palapa.",
       bio: "Gajah Mada mengawali kariernya sebagai pimpinan pasukan pengawal raja (Bhayangkara). Berkat kepiawaian strategi militer dan wawasan kebangsaan yang visioner, ia berhasil mengintegrasikan kepulauan Nusantara di bawah payung perdamaian dan kemakmuran Majapahit.",
@@ -311,7 +311,7 @@ const HISTORY_DATA = {
       name: "Sutomo (Bung Tomo)",
       title: "Pengobar Semangat Arek-Arek Suroboyo",
       period: "1920 – 1981",
-      image: "assets/images/teks_proklamasi.jpg",
+      image: "assets/images/bung_tomo.jpg",
       quote: "Selama banteng-banteng Indonesia masih mempunyai darah merah yang dapat membikin secarik kain putih menjadi merah dan putih, maka selama itu kita tidak akan mau menyerah!",
       role: "Pemimpin Barisan Pemberontak Rakyat Indonesia (BPRI), Orator Perang 10 November 1945.",
       bio: "Jurnalis dan orator muda berbakat yang melalui corong radio membakar tekad ratusan ribu pemuda dan santri di Surabaya untuk mempertahankan kedaulatan republik dari gempuran tentara Sekutu Inggris.",
