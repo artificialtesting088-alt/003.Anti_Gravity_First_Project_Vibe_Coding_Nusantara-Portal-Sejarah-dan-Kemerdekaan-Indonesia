@@ -1,0 +1,94 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 450' width='100%' height='100%'>
+  <defs>
+    <linearGradient id='pejuangGrad' x1='0%' y1='100%' x2='100%' y2='0%'>
+      <stop offset='0%' stop-color='#7F1D1D' stop-opacity='0.35' />
+      <stop offset='50%' stop-color='#C8102E' stop-opacity='0.4' />
+      <stop offset='100%' stop-color='#F59E0B' stop-opacity='0.25' />
+    </linearGradient>
+    <radialGradient id='heroAura' cx='35%' cy='50%' r='60%'>
+      <stop offset='0%' stop-color='#F59E0B' stop-opacity='0.25' />
+      <stop offset='50%' stop-color='#C8102E' stop-opacity='0.12' />
+      <stop offset='100%' stop-color='#C8102E' stop-opacity='0' />
+    </radialGradient>
+    <filter id='pejuangGlow' x='-20%' y='-20%' width='140%' height='140%'>
+      <feGaussianBlur stdDeviation='3' result='blur' />
+      <feMerge>
+        <feMergeNode in='blur' />
+        <feMergeNode in='SourceGraphic' />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Heroic Halo Aura -->
+  <circle cx='350' cy='250' r='300' fill='url(#heroAura)' />
+
+  <!-- Rays of Valor (Sinar Perjuangan) -->
+  <g stroke='#F59E0B' stroke-width='1.5' stroke-opacity='0.2' stroke-dasharray='5,5'>
+    <line x1='350' y1='250' x2='50' y2='30' />
+    <line x1='350' y1='250' x2='180' y2='10' />
+    <line x1='350' y1='250' x2='350' y2='0' />
+    <line x1='350' y1='250' x2='520' y2='10' />
+    <line x1='350' y1='250' x2='680' y2='40' />
+    <line x1='350' y1='250' x2='820' y2='90' />
+  </g>
+
+  <!-- Hill of Victory (Bukit Perjuangan) -->
+  <path d='M0,380 Q250,300 500,320 T1000,350 L1000,450 L0,450 Z' fill='#C8102E' fill-opacity='0.15' />
+  <path d='M0,400 Q300,340 650,360 T1000,370 L1000,450 L0,450 Z' fill='#7F1D1D' fill-opacity='0.2' />
+
+  <!-- Pejuang 1: Central Hero raising Bambu Runcing & Sang Merah Putih -->
+  <g fill='url(#pejuangGrad)' filter='url(#pejuangGlow)' stroke='#F59E0B' stroke-width='1.5' stroke-opacity='0.4'>
+    <!-- Bamboo Spear Pole (Bambu Runcing) -->
+    <line x1='350' y1='40' x2='320' y2='400' stroke='#D97706' stroke-width='5' stroke-linecap='round' />
+    <!-- Sharp Point of Bamboo -->
+    <polygon points='350,40 342,65 352,65' fill='#F59E0B' />
+
+    <!-- Big Flag Fluttering on Spear -->
+    <path d='M346,70 C410,40 450,110 520,80 C560,65 590,95 620,85 L620,155 C590,165 560,135 520,150 C450,180 410,110 344,140 Z' 
+          fill='#C8102E' fill-opacity='0.75' stroke='#C8102E' stroke-width='1.5' />
+    <path d='M344,140 C410,110 450,180 520,150 C560,135 590,165 620,155 L620,225 C590,235 560,205 520,220 C450,250 410,180 342,210 Z' 
+          fill='#FFFFFF' fill-opacity='0.85' stroke='#CBD5E1' stroke-width='1.5' />
+
+    <!-- Hero Silhouette Standing Firm -->
+    <!-- Head with Ikat Kepala Merah Putih -->
+    <ellipse cx='300' cy='185' rx='18' ry='20' />
+    <!-- Ikat Kepala Ribbons waving back -->
+    <path d='M295,178 L265,170 C258,168 255,175 260,182 L290,185 Z' fill='#C8102E' stroke='#C8102E' stroke-width='1' />
+    <path d='M295,185 L260,182 C255,188 258,195 265,190 L295,188 Z' fill='#FFFFFF' stroke='#E2E8F0' stroke-width='1' />
+
+    <!-- Torso (Kemeja Pejuang Lengan Pendek) -->
+    <path d='M275,205 C265,225 260,260 255,310 L345,310 C340,260 335,225 325,205 Z' />
+    <!-- Belt with bullets / Sabuk amunisi -->
+    <rect x='255' y='305' width='90' height='12' rx='2' fill='#D97706' fill-opacity='0.6' />
+
+    <!-- Raised Left Arm holding Spear -->
+    <path d='M320,220 L350,140 C355,135 365,140 360,150 L335,230 Z' />
+    <!-- Clenched Right Fist Raised in Triumph (Merdeka!) -->
+    <path d='M275,220 L230,165 C225,160 215,165 220,175 L265,235 Z' />
+    <circle cx='222' cy='165' r='8' fill='#F59E0B' fill-opacity='0.8' />
+
+    <!-- Sturdy Legs planted on the Hill -->
+    <path d='M265,317 L250,420 L280,420 L290,340 Z' />
+    <path d='M335,317 L355,420 L325,420 L310,340 Z' />
+  </g>
+
+  <!-- Pejuang 2 (Right, with raised rifle / senapan) -->
+  <g fill='#991B1B' fill-opacity='0.35' stroke='#F59E0B' stroke-width='1' stroke-opacity='0.3'>
+    <!-- Head with Topi Baja / Caping -->
+    <path d='M720,240 C700,240 690,250 710,255 L750,255 C770,250 760,240 740,240 Z' />
+    <ellipse cx='730' cy='260' rx='14' ry='16' />
+    <path d='M710,276 C700,295 695,330 690,390 L765,390 C760,330 755,295 745,276 Z' />
+    <!-- Rifle pointing up-right -->
+    <line x1='735' y1='300' x2='790' y2='190' stroke='#334155' stroke-width='4' />
+    <line x1='785' y1='200' x2='795' y2='180' stroke='#F59E0B' stroke-width='2' />
+  </g>
+
+  <!-- Left Pejuang silhouette running forward with bambu runcing -->
+  <g fill='#991B1B' fill-opacity='0.35' stroke='#F59E0B' stroke-width='1' stroke-opacity='0.3'>
+    <ellipse cx='140' cy='280' rx='14' ry='15' />
+    <path d='M120,295 C115,315 110,340 105,400 L165,400 C160,340 155,315 150,295 Z' />
+    <!-- Spear charging forward -->
+    <line x1='135' y1='320' x2='200' y2='250' stroke='#D97706' stroke-width='3.5' />
+    <polygon points='200,250 190,255 195,262' fill='#F59E0B' />
+  </g>
+</svg>

@@ -706,9 +706,82 @@ Wakil2 bangsa Indonesia.`;
     });
   }
 
+  // 12. Dynamic Patriotic Particles (Embers & Gold/Red Sparks)
+  function initParticleCanvas() {
+    const canvas = document.getElementById('particle-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }, 150);
+    });
+
+    const particles = [];
+    const count = Math.min(Math.floor(window.innerWidth / 35), 45);
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 2.2 + 1,
+        isGold: Math.random() > 0.45,
+        alpha: Math.random() * 0.35 + 0.15,
+        speedY: Math.random() * 0.4 + 0.15,
+        speedX: (Math.random() - 0.5) * 0.3,
+        wobble: Math.random() * Math.PI * 2,
+        wobbleSpeed: Math.random() * 0.02 + 0.008
+      });
+    }
+
+    let isRunning = true;
+    document.addEventListener('visibilitychange', () => {
+      isRunning = !document.hidden;
+      if (isRunning) requestAnimationFrame(drawParticles);
+    });
+
+    function drawParticles() {
+      if (!isRunning) return;
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach(p => {
+        p.y -= p.speedY;
+        p.wobble += p.wobbleSpeed;
+        p.x += Math.sin(p.wobble) * 0.35 + p.speedX;
+
+        if (p.y < -10) {
+          p.y = height + 10;
+          p.x = Math.random() * width;
+        }
+        if (p.x < -10) p.x = width + 10;
+        if (p.x > width + 10) p.x = -10;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.isGold
+          ? `rgba(245, 158, 11, ${p.alpha})`
+          : `rgba(200, 16, 46, ${p.alpha * 0.85})`;
+        ctx.shadowColor = p.isGold ? 'rgba(245, 158, 11, 0.6)' : 'rgba(200, 16, 46, 0.5)';
+        ctx.shadowBlur = 6;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(drawParticles);
+    }
+    requestAnimationFrame(drawParticles);
+  }
+
   // Inisialisasi awal
   renderTimeline();
   renderHeroes();
   renderQuizQuestion();
   initScrollReveal();
+  initParticleCanvas();
 });
+

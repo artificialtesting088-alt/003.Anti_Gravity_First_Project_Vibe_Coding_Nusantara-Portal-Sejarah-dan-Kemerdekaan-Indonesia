@@ -1,0 +1,76 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 500' width='100%' height='100%'>
+  <defs>
+    <linearGradient id='islandGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#C8102E' stop-opacity='0.45' />
+      <stop offset='35%' stop-color='#F59E0B' stop-opacity='0.35' />
+      <stop offset='70%' stop-color='#C8102E' stop-opacity='0.5' />
+      <stop offset='100%' stop-color='#7F1D1D' stop-opacity='0.4' />
+    </linearGradient>
+    <filter id='islandGlow' x='-15%' y='-15%' width='130%' height='130%'>
+      <feGaussianBlur stdDeviation='5' result='blur' />
+      <feMerge>
+        <feMergeNode in='blur' />
+        <feMergeNode in='SourceGraphic' />
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Maritime Grid Coordinates -->
+  <g stroke='#C8102E' stroke-width='0.5' stroke-opacity='0.15' stroke-dasharray='6,8'>
+    <line x1='100' y1='250' x2='1100' y2='250' /> <!-- Equator Line -->
+    <line x1='350' y1='50' x2='350' y2='450' />
+    <line x1='600' y1='50' x2='600' y2='450' />
+    <line x1='850' y1='50' x2='850' y2='450' />
+  </g>
+  <text x='1110' y='254' fill='#C8102E' fill-opacity='0.35' font-family='sans-serif' font-size='11' font-weight='bold'>0° Khatulistiwa</text>
+
+  <g fill='url(#islandGrad)' filter='url(#islandGlow)' stroke='#F59E0B' stroke-width='1.5' stroke-opacity='0.55'>
+    <!-- Sumatera -->
+    <path d='M95,65 Q135,45 160,75 L255,215 Q285,255 250,285 L225,305 Q180,270 160,220 L95,120 Q80,90 95,65 Z' />
+    <path d='M175,175 Q205,165 225,195 L205,215 Z' opacity='0.7' />
+    <!-- Bangka Belitung -->
+    <ellipse cx='270' cy='230' rx='16' ry='24' />
+    <ellipse cx='308' cy='248' rx='12' ry='15' />
+    <!-- Nias & Mentawai -->
+    <ellipse cx='80' cy='140' rx='8' ry='22' transform='rotate(-35 80 140)' />
+    <ellipse cx='125' cy='220' rx='9' ry='26' transform='rotate(-38 125 220)' />
+    <ellipse cx='155' cy='270' rx='8' ry='20' transform='rotate(-40 155 270)' />
+
+    <!-- Jawa -->
+    <path d='M245,325 Q350,312 460,338 Q535,348 570,342 Q545,368 475,368 L355,362 Q285,356 245,340 Z' />
+    <path d='M425,330 Q460,324 480,336 L450,346 Z' opacity='0.8' />
+    <!-- Madura -->
+    <ellipse cx='535' cy='326' rx='28' ry='9' />
+    
+    <!-- Nusa Tenggara: Bali, Lombok, Sumbawa, Flores, Sumba, Timor -->
+    <ellipse cx='590' cy='352' rx='15' ry='11' />
+    <ellipse cx='622' cy='357' rx='17' ry='13' />
+    <ellipse cx='670' cy='362' rx='30' ry='13' />
+    <ellipse cx='745' cy='367' rx='42' ry='11' />
+    <ellipse cx='710' cy='395' rx='25' ry='12' />
+    <ellipse cx='805' cy='372' rx='20' ry='11' />
+    <ellipse cx='855' cy='388' rx='38' ry='15' />
+    <ellipse cx='905' cy='398' rx='30' ry='11' />
+
+    <!-- Kalimantan -->
+    <path d='M355,105 Q465,85 520,135 Q540,190 495,255 Q430,278 375,245 Q335,212 345,158 Z' />
+    <path d='M435,128 Q480,148 470,192 L418,182 Z' opacity='0.7' />
+
+    <!-- Sulawesi -->
+    <path d='M585,125 Q660,105 670,135 Q625,168 605,190 Q660,230 680,275 Q645,295 625,265 Q605,232 585,252 L565,295 Q542,272 565,242 Q575,200 565,158 Z' />
+
+    <!-- Maluku (Halmahera, Seram, Buru, Ambon, Kei, Aru) -->
+    <!-- Halmahera -->
+    <path d='M745,105 Q785,125 775,168 Q755,158 745,138 Z' />
+    <path d='M745,178 Q770,208 745,242 L725,232 Z' />
+    <!-- Seram & Buru -->
+    <ellipse cx='765' cy='265' rx='34' ry='11' />
+    <ellipse cx='715' cy='275' rx='20' ry='15' />
+    <!-- Aru & Kei -->
+    <ellipse cx='805' cy='320' rx='14' ry='22' />
+
+    <!-- Papua (Irian Jaya & Raja Ampat) -->
+    <ellipse cx='815' cy='175' rx='12' ry='10' />
+    <path d='M835,185 Q925,155 1010,175 Q1075,205 1095,290 Q1015,325 930,295 Q880,285 860,242 Q828,220 835,185 Z' />
+    <path d='M820,205 Q840,185 860,218 L840,238 Z' opacity='0.7' />
+  </g>
+</svg>

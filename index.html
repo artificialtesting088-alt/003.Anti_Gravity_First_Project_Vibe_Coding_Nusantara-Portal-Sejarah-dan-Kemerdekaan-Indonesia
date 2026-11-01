@@ -21,6 +21,9 @@
 </head>
 <body>
 
+  <!-- Dynamic Patriotic Particles (Rising golden embers & freedom sparks) -->
+  <canvas id="particle-canvas" class="particle-canvas" aria-hidden="true"></canvas>
+
   <!-- ==========================================
        Header & Navigasi
        ========================================== -->
@@ -70,6 +73,7 @@
   <section class="hero-section" id="beranda">
     <div class="hero-backdrop">
       <div class="patriotic-glow"></div>
+      <div class="hero-map-watermark" aria-hidden="true"></div>
     </div>
 
     <div class="container">
@@ -125,6 +129,12 @@
        Linimasa Sejarah Interaktif (Timeline)
        ========================================== -->
   <section class="timeline-section" id="linimasa">
+    <!-- Traditional Gunungan Wayang Cultural Watermarks -->
+    <div class="decor-gunungan decor-gunungan-left-1" aria-hidden="true"></div>
+    <div class="decor-gunungan decor-gunungan-right-1" aria-hidden="true"></div>
+    <div class="decor-gunungan decor-gunungan-left-2" aria-hidden="true"></div>
+    <div class="decor-gunungan decor-gunungan-right-2" aria-hidden="true"></div>
+
     <div class="container">
       <div class="section-header visible">
         <span class="section-tag">Kronik Perjalanan Zaman</span>
@@ -196,7 +206,13 @@
       <div class="proklamasi-wrapper visible">
         <!-- Naskah Proklamasi -->
         <div class="proklamasi-parchment">
-          <div class="parchment-stamp">Otentik 1945</div>
+          <div class="parchment-wax-seal" title="Segel Otentik Kemerdekaan RI 17 Agustus 1945">
+            <img src="assets/images/wax_seal.svg" alt="Segel Kemerdekaan 17 Agustus 1945">
+          </div>
+          <div class="parchment-corner parchment-corner-tl" aria-hidden="true"></div>
+          <div class="parchment-corner parchment-corner-tr" aria-hidden="true"></div>
+          <div class="parchment-corner parchment-corner-bl" aria-hidden="true"></div>
+          <div class="parchment-corner parchment-corner-br" aria-hidden="true"></div>
           <div class="naskah-tabs">
             <button class="naskah-tab-btn active" id="tab-otentik">Naskah Ketikan (Sayuti Melik)</button>
             <button class="naskah-tab-btn" id="tab-klad">Naskah Klad (Tulisan Bung Karno)</button>
@@ -276,6 +292,7 @@ Soekarno/Hatta.
       <div class="pancasila-box visible">
         <div class="pancasila-layout">
           <div class="pancasila-symbol">
+            <div class="pancasila-sunburst" aria-hidden="true"></div>
             <img src="assets/images/pancasila.png" alt="Lambang Garuda Pancasila" loading="lazy">
             <div class="pancasila-motto">"Bhinneka Tunggal Ika"</div>
             <div style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--abu-sedang);">

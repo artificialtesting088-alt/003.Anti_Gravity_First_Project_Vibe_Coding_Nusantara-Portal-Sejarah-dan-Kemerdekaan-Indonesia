@@ -88,8 +88,7 @@ body {
   background-color: var(--bg-body);
   background-image: 
     radial-gradient(circle at 15% 15%, rgba(200, 16, 46, 0.04) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(217, 119, 6, 0.04) 0%, transparent 45%),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23C8102E' stroke-width='0.75' stroke-opacity='0.08'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20S-10 18.954-10 30s8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20zm0-30c0 11.046-8.954 20-20 20S-10 8.954-10-2s8.954-20 20-20 20 8.954 20 20zm0 60c0 11.046-8.954 20-20 20S-10 68.954-10 58s8.954-20 20-20 20 8.954 20 20zm30-30c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%23D97706' fill-opacity='0.15'/%3E%3Ccircle cx='0' cy='0' r='3.5' fill='%23D97706' fill-opacity='0.15'/%3E%3Ccircle cx='60' cy='0' r='3.5' fill='%23D97706' fill-opacity='0.15'/%3E%3Ccircle cx='0' cy='60' r='3.5' fill='%23D97706' fill-opacity='0.15'/%3E%3Ccircle cx='60' cy='60' r='3.5' fill='%23D97706' fill-opacity='0.15'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    radial-gradient(circle at 85% 75%, rgba(217, 119, 6, 0.04) 0%, transparent 45%);
   color: var(--gelap-teks);
   line-height: 1.65;
   overflow-x: hidden;
@@ -99,9 +98,8 @@ body {
 
 [data-theme="dark"] body {
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(239, 68, 68, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.06) 0%, transparent 45%),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23EF4444' stroke-width='0.75' stroke-opacity='0.12'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20S-10 18.954-10 30s8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20zm0-30c0 11.046-8.954 20-20 20S-10 8.954-10-2s8.954-20 20-20 20 8.954 20 20zm0 60c0 11.046-8.954 20-20 20S-10 68.954-10 58s8.954-20 20-20 20 8.954 20 20zm30-30c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%23F59E0B' fill-opacity='0.2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    radial-gradient(circle at 15% 15%, rgba(239, 68, 68, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(245, 158, 11, 0.05) 0%, transparent 45%);
 }
 
 /* Custom Scrollbar */
@@ -118,6 +116,17 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--merah-terang);
+}
+
+/* Particle Canvas Background */
+.particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Utility Containers */
@@ -303,9 +312,19 @@ body {
   min-height: auto;
   display: flex;
   align-items: center;
-  padding: 95px 0 35px;
+  padding: 95px 0 45px;
   overflow: hidden;
-  background: linear-gradient(175deg, rgba(200, 16, 46, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  background: 
+    radial-gradient(ellipse at 50% 10%, rgba(200, 16, 46, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+    linear-gradient(175deg, rgba(200, 16, 46, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+[data-theme="dark"] .hero-section {
+  background: 
+    radial-gradient(ellipse at 50% 10%, rgba(239, 68, 68, 0.22) 0%, transparent 60%),
+    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+    linear-gradient(175deg, rgba(239, 68, 68, 0.1) 0%, rgba(11, 14, 20, 0) 100%);
 }
 
 .hero-backdrop {
@@ -321,14 +340,39 @@ body {
 
 .patriotic-glow {
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(200, 16, 46, 0.16) 0%, rgba(200, 16, 46, 0) 70%);
-  top: -120px;
-  right: -80px;
-  filter: blur(50px);
+  background: radial-gradient(circle, rgba(200, 16, 46, 0.22) 0%, rgba(245, 158, 11, 0.12) 40%, transparent 70%);
+  top: -150px;
+  right: -100px;
+  filter: blur(60px);
   animation: pulseGlow 8s infinite alternate ease-in-out;
+}
+
+.hero-map-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1100px;
+  max-width: 95vw;
+  height: 480px;
+  background: url('../assets/images/nusantara_map.svg') no-repeat center center / contain;
+  opacity: 0.55;
+  filter: drop-shadow(0 0 35px rgba(200, 16, 46, 0.45));
+  pointer-events: none;
+  animation: floatMap 12s ease-in-out infinite alternate;
+}
+
+[data-theme="dark"] .hero-map-watermark {
+  opacity: 0.65;
+  filter: drop-shadow(0 0 45px rgba(239, 68, 68, 0.65));
+}
+
+@keyframes floatMap {
+  0% { transform: translate(-50%, -50%) scale(0.98); }
+  100% { transform: translate(-50%, -48%) scale(1.02); }
 }
 
 @keyframes pulseGlow {
@@ -534,7 +578,63 @@ section {
    ========================================================================== */
 
 .timeline-section {
-  background: var(--putih-krem);
+  position: relative;
+  background-color: var(--putih-krem);
+  background-image: 
+    radial-gradient(ellipse at 15% 15%, rgba(200, 16, 46, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 55%);
+  overflow: hidden;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+}
+
+[data-theme="dark"] .timeline-section {
+  background-color: #0b0f17;
+  background-image: 
+    radial-gradient(ellipse at 15% 15%, rgba(239, 68, 68, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(245, 158, 11, 0.1) 0%, transparent 55%);
+}
+
+/* Nusantara Maritime & Temple Heritage Vector Silhouette (Borobudur, Kapal Pinisi, Keris) */
+.timeline-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 380px;
+  background: url('../assets/images/vector_nusantara_heritage.svg') no-repeat center bottom / contain;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] .timeline-section::after {
+  opacity: 0.7;
+  filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.4));
+}
+
+/* Gunungan Wayang Cultural Watermarks */
+.decor-gunungan {
+  position: absolute;
+  width: 240px;
+  height: 420px;
+  background: url('../assets/images/gunungan.svg') no-repeat center / contain;
+  pointer-events: none;
+  opacity: 0.22;
+  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.25));
+  z-index: 0;
+  transition: opacity var(--transisi-sedang);
+}
+
+.decor-gunungan-left-1 { top: 140px; left: -60px; transform: rotate(7deg); }
+.decor-gunungan-right-1 { top: 680px; right: -60px; transform: rotate(-7deg) scaleX(-1); }
+.decor-gunungan-left-2 { top: 1250px; left: -60px; transform: rotate(6deg); }
+.decor-gunungan-right-2 { top: 1850px; right: -60px; transform: rotate(-6deg) scaleX(-1); }
+
+[data-theme="dark"] .decor-gunungan {
+  opacity: 0.48;
+  filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.5));
 }
 
 /* Era Filter Tabs */
@@ -545,6 +645,8 @@ section {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .era-tab-btn {
@@ -570,7 +672,7 @@ section {
   background: var(--merah-utama);
   color: #FFFFFF;
   border-color: var(--merah-utama);
-  box-shadow: 0 4px 15px rgba(200, 16, 46, 0.3);
+  box-shadow: 0 4px 15px rgba(200, 16, 46, 0.35);
 }
 
 /* Timeline Container */
@@ -578,6 +680,7 @@ section {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
+  z-index: 1;
 }
 
 .timeline-track::before {
@@ -587,9 +690,10 @@ section {
   bottom: 0;
   left: 50%;
   width: 4px;
-  background: linear-gradient(180deg, var(--merah-utama) 0%, var(--emas-terang) 50%, var(--merah-gelap) 100%);
+  background: linear-gradient(180deg, var(--merah-utama) 0%, var(--emas-terang) 50%, var(--merah-pekat) 100%);
   transform: translateX(-50%);
   border-radius: 4px;
+  box-shadow: 0 0 15px rgba(200, 16, 46, 0.6), 0 0 30px rgba(245, 158, 11, 0.3);
 }
 
 .timeline-item {
@@ -615,29 +719,35 @@ section {
 .timeline-node {
   position: absolute;
   top: 2rem;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background: var(--putih-murni);
   border: 4px solid var(--merah-utama);
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 0 0 5px rgba(200, 16, 46, 0.15);
+  box-shadow: 0 0 0 6px rgba(200, 16, 46, 0.18), 0 0 16px rgba(200, 16, 46, 0.5);
   transition: all var(--transisi-cepat);
+  animation: pulseNode 3s infinite ease-in-out;
+}
+
+@keyframes pulseNode {
+  0%, 100% { box-shadow: 0 0 0 5px rgba(200, 16, 46, 0.18), 0 0 15px rgba(200, 16, 46, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0.3), 0 0 22px rgba(245, 158, 11, 0.6); }
 }
 
 .timeline-item:nth-child(odd) .timeline-node {
-  right: -10px;
+  right: -11px;
 }
 
 .timeline-item:nth-child(even) .timeline-node {
-  left: -10px;
+  left: -11px;
 }
 
 .timeline-item:hover .timeline-node {
   transform: scale(1.3);
   background: var(--emas-terang);
   border-color: var(--merah-utama);
-  box-shadow: 0 0 15px rgba(200, 16, 46, 0.4);
+  box-shadow: 0 0 20px rgba(200, 16, 46, 0.6);
 }
 
 /* Timeline Card */
@@ -646,16 +756,34 @@ section {
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
   transition: all var(--transisi-sedang);
   overflow: hidden;
   position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--merah-utama), var(--emas-terang));
+  opacity: 0.75;
+  transition: all var(--transisi-sedang);
 }
 
 .timeline-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(200, 16, 46, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(200, 16, 46, 0.18), 0 0 20px rgba(245, 158, 11, 0.15);
+  border-color: rgba(200, 16, 46, 0.35);
+}
+
+.timeline-card:hover::before {
+  opacity: 1;
+  height: 5px;
 }
 
 .timeline-card-header {
@@ -746,28 +874,86 @@ section {
    Tokoh Pahlawan (Heroes Section)
    ========================================================================== */
 
+.heroes-section {
+  position: relative;
+  background: linear-gradient(180deg, rgba(200, 16, 46, 0.04) 0%, rgba(127, 29, 29, 0.08) 50%, rgba(200, 16, 46, 0.04) 100%);
+  background-image: 
+    radial-gradient(ellipse at 50% 10%, rgba(200, 16, 46, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 10% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 50%, rgba(200, 16, 46, 0.08) 0%, transparent 40%);
+  overflow: hidden;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+}
+
+[data-theme="dark"] .heroes-section {
+  background: linear-gradient(180deg, #0b0e14 0%, #170d12 50%, #0b0e14 100%);
+  background-image: 
+    radial-gradient(ellipse at 50% 10%, rgba(239, 68, 68, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 10% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 40%);
+}
+
+/* Heroic Fighters Silhouette (Bambu Runcing & Bendera Merah Putih) */
+.heroes-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 900px;
+  max-width: 95vw;
+  height: 380px;
+  background: url('../assets/images/vector_pejuang.svg') no-repeat right bottom / contain;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] .heroes-section::after {
+  opacity: 0.65;
+  filter: drop-shadow(0 0 35px rgba(239, 68, 68, 0.55));
+}
+
 .heroes-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-card {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1.5px solid rgba(217, 119, 6, 0.25);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   transition: all var(--transisi-sedang);
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
+.hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--merah-utama), var(--emas-terang));
+  z-index: 2;
+  transition: height var(--transisi-sedang);
+}
+
 .hero-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-  border-color: rgba(200, 16, 46, 0.4);
+  border-color: var(--emas-terang);
+  box-shadow: 0 16px 40px rgba(200, 16, 46, 0.25), 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+.hero-card:hover::after {
+  height: 5px;
 }
 
 .hero-card-img-wrap {
@@ -856,9 +1042,42 @@ section {
    ========================================================================== */
 
 .proklamasi-section {
-  background: linear-gradient(180deg, var(--card-bg) 0%, var(--merah-lembut) 100%);
-  border-top: 2px solid rgba(200, 16, 46, 0.1);
-  border-bottom: 2px solid rgba(200, 16, 46, 0.1);
+  position: relative;
+  background: 
+    radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.12) 0%, transparent 70%),
+    linear-gradient(180deg, var(--bg-body) 0%, rgba(200, 16, 46, 0.05) 50%, var(--bg-body) 100%);
+  border-top: 2px solid rgba(200, 16, 46, 0.2);
+  border-bottom: 2px solid rgba(200, 16, 46, 0.2);
+  overflow: hidden;
+}
+
+[data-theme="dark"] .proklamasi-section {
+  background-color: #0b0e14;
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.16) 0%, transparent 70%),
+    linear-gradient(180deg, #0b0e14 0%, #151a23 50%, #0b0e14 100%);
+}
+
+/* Iconic Vector Proklamasi Silhouette (Bung Karno di Mikrofon, Bung Hatta, Sang Saka Merah Putih) */
+.proklamasi-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1400px;
+  max-width: 100vw;
+  height: 600px;
+  background: url('../assets/images/vector_proklamasi.svg') no-repeat center center / contain;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(0 0 35px rgba(200, 16, 46, 0.45));
+}
+
+[data-theme="dark"] .proklamasi-section::before {
+  opacity: 0.75;
+  filter: drop-shadow(0 0 45px rgba(239, 68, 68, 0.75));
 }
 
 .proklamasi-wrapper {
@@ -866,37 +1085,64 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .proklamasi-parchment {
-  background: #FFFDF9;
-  border: 2px solid #E2D9C8;
+  background: #FFFDF7;
+  border: 3px double #D4AF37;
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 3rem 2.5rem 2.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 0 30px rgba(245, 158, 11, 0.15);
   position: relative;
   font-family: 'Courier New', Courier, monospace;
 }
 
 [data-theme="dark"] .proklamasi-parchment {
-  background: #1A1F2B;
-  border-color: #2D3748;
+  background: #141923;
+  border-color: #C5A059;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(239, 68, 68, 0.2);
 }
 
-.parchment-stamp {
+.parchment-wax-seal {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  border: 2px dashed var(--merah-utama);
-  color: var(--merah-utama);
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  transform: rotate(6deg);
-  opacity: 0.85;
+  top: -24px;
+  right: 25px;
+  width: 86px;
+  height: 86px;
+  z-index: 5;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+  transition: transform var(--transisi-sedang);
+  animation: floatSeal 6s ease-in-out infinite alternate;
 }
+
+.parchment-wax-seal:hover {
+  transform: scale(1.1) rotate(-6deg);
+}
+
+@keyframes floatSeal {
+  0% { transform: rotate(4deg) translateY(0); }
+  100% { transform: rotate(8deg) translateY(-4px); }
+}
+
+.parchment-wax-seal img {
+  width: 100%;
+  height: 100%;
+}
+
+.parchment-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: #D4AF37;
+  border-style: solid;
+  pointer-events: none;
+}
+.parchment-corner-tl { top: 10px; left: 10px; border-width: 2px 0 0 2px; }
+.parchment-corner-tr { top: 10px; right: 10px; border-width: 2px 2px 0 0; }
+.parchment-corner-bl { bottom: 10px; left: 10px; border-width: 0 0 2px 2px; }
+.parchment-corner-br { bottom: 10px; right: 10px; border-width: 0 2px 2px 0; }
 
 .proklamasi-text-header {
   text-align: center;
@@ -1039,12 +1285,31 @@ section {
    Garuda Pancasila Section
    ========================================================================== */
 
+.pancasila-section {
+  position: relative;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 65%),
+    linear-gradient(180deg, var(--bg-body) 0%, rgba(200, 16, 46, 0.05) 50%, var(--bg-body) 100%);
+  overflow: hidden;
+  border-top: 1px solid var(--card-border);
+}
+
+[data-theme="dark"] .pancasila-section {
+  background-color: #0b0e14;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.18) 0%, transparent 65%),
+    linear-gradient(180deg, #0b0e14 0%, #151a23 50%, #0b0e14 100%);
+}
+
 .pancasila-box {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1.5px solid rgba(217, 119, 6, 0.25);
   border-radius: var(--radius-lg);
   padding: 3rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .pancasila-layout {
@@ -1055,26 +1320,56 @@ section {
 }
 
 .pancasila-symbol {
+  position: relative;
   text-align: center;
+  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pancasila-sunburst {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 380px;
+  background: url('../assets/images/sunburst.svg') no-repeat center center / contain;
+  animation: rotateSunburst 50s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.45));
+}
+
+@keyframes rotateSunburst {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .pancasila-symbol img {
-  max-width: 240px;
+  position: relative;
+  z-index: 1;
+  max-width: 250px;
   height: auto;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
   transition: transform var(--transisi-sedang);
 }
 
 .pancasila-symbol:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08) translateY(-4px);
 }
 
 .pancasila-motto {
   margin-top: 1.5rem;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--emas-aksen);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  position: relative;
+  z-index: 1;
 }
 
 .sila-list {
@@ -1131,14 +1426,44 @@ section {
    Kuis Interaktif (Trivia Sejarah)
    ========================================================================== */
 
+.quiz-section {
+  position: relative;
+  background: 
+    radial-gradient(circle at 50% 20%, rgba(200, 16, 46, 0.1) 0%, transparent 65%),
+    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 50%),
+    var(--bg-body);
+  overflow: hidden;
+  border-top: 1px solid var(--card-border);
+}
+
+[data-theme="dark"] .quiz-section {
+  background-color: #0b0e14;
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(239, 68, 68, 0.12) 0%, transparent 65%),
+    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+}
+
 .quiz-container {
   max-width: 780px;
   margin: 0 auto;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1.5px solid rgba(217, 119, 6, 0.3);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 15px 40px rgba(200, 16, 46, 0.12), 0 0 30px rgba(245, 158, 11, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.quiz-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--merah-utama), var(--emas-terang), var(--merah-utama));
 }
 
 .quiz-header {
@@ -1379,11 +1704,14 @@ section {
    ========================================================================== */
 
 .site-footer {
-  background: #0B0E14;
+  background: #080B10;
   color: #F8FAFC;
   padding: 70px 0 30px;
   border-top: 4px solid var(--merah-utama);
   position: relative;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(200, 16, 46, 0.3) 0%, transparent 60%);
+  overflow: hidden;
 }
 
 .footer-grid {
